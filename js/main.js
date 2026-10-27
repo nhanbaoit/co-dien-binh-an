@@ -2,12 +2,21 @@
  * Co Dien Binh An - Main Client Scripts
  */
 
-document.addEventListener('DOMContentLoaded', function () {
+function initAllComponents() {
   initHeroSlider();
   initProductFilter();
   initNewsNavigation();
   initNewsletterForm();
   initSmoothScroll();
+}
+
+// Support both dynamically loaded sections and standard DOMContentLoaded
+document.addEventListener('sectionsLoaded', initAllComponents);
+document.addEventListener('DOMContentLoaded', function () {
+  // If sections are already embedded in the DOM (e.g. fallback or static build), initialize immediately
+  if (document.querySelector('.hero-slide-item')) {
+    initAllComponents();
+  }
 });
 
 /**

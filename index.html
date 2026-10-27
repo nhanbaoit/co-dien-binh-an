@@ -1,939 +1,1583 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cơ Điện Bình An - Đồng Hành Cùng Nhà Thầu M&E</title>
-  <meta name="description" content="Công ty TNHH Đầu tư và Kỹ thuật Cơ Điện Bình An chuyên bốc tách khối lượng M&E miễn phí, phân phối vật tư chính hãng Cadivi, Panasonic, Sino, Suntek và thu hồi vật tư thừa.">
-  <link rel="icon" type="image/png" href="assets/images/logo-binh-an.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cơ Điện Bình An - Đồng Hành Cùng Nhà Thầu M&E</title>
+    <meta
+      name="description"
+      content="Công ty TNHH Đầu tư và Kỹ thuật Cơ Điện Bình An chuyên bốc tách khối lượng M&E miễn phí, phân phối vật tư chính hãng Cadivi, Panasonic, Sino, Suntek và thu hồi vật tư thừa."
+    />
+    <link rel="icon" type="image/png" href="assets/images/logo-binh-an.png" />
 
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <!-- Custom Modular Stylesheets -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
-</head>
-<body>
-
-  <!-- =========================================================================
-       1. HEADER (Top bar, Branding Logo, Search Box, Hotline, Primary Nav)
-       ========================================================================= -->
-  <header class="site-header">
-    <!-- Top Utility Bar -->
-    <div class="custom-container py-3">
-      <div class="row align-items-center gy-3">
-        <!-- Left: Search Box -->
-        <div class="col-12 col-md-4 order-2 order-md-1">
-          <div class="search-wrapper">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input 
-              type="text" 
-              placeholder="Nhập nội dung tìm kiếm ..." 
-              class="search-input"
-              aria-label="Tìm kiếm nội dung"
-            />
-          </div>
-        </div>
-
-        <!-- Center: Branding Logo -->
-        <div class="col-12 col-md-4 text-center order-1 order-md-2">
-          <a href="#" class="d-inline-flex align-items-center justify-content-center gap-3 text-decoration-none">
-            <img src="assets/images/logo-binh-an.png" alt="Logo Cơ Điện Bình An" class="brand-logo-img">
-            <div class="text-start">
-              <span class="d-block brand-company-sub">Công ty TNHH Đầu tư & Kỹ thuật</span>
-              <span class="d-block brand-company-name">CƠ ĐIỆN BÌNH AN</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Right: Hotline Project Contact -->
-        <div class="col-12 col-md-4 order-3 order-md-3">
-          <div class="d-flex justify-content-md-end align-items-center gap-3">
-            <div class="hotline-icon-box">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="text-md-end">
-              <span class="d-block hotline-label">Hotline dự án (Ms. Hằng)</span>
-              <a href="tel:0896555656" class="hotline-number text-decoration-none">0896 55 56 56</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation Bar (Solid Brand Blue) -->
-    <nav class="main-navbar" aria-label="Điều hướng chính">
-      <div class="custom-container">
-        <ul class="main-nav-list mb-0">
-          <li class="main-nav-item active position-relative">
-            <a href="#" class="main-nav-link">
-              <i class="fa-solid fa-house small"></i> TRANG CHỦ
-            </a>
-          </li>
-          <li class="main-nav-item">
-            <a href="#gioi-thieu" class="main-nav-link">GIỚI THIỆU</a>
-          </li>
-          <li class="main-nav-item">
-            <a href="#dich-vu" class="main-nav-link">DỊCH VỤ NỔI BẬT</a>
-          </li>
-          <li class="main-nav-item">
-            <a href="#san-pham" class="main-nav-link">DANH MỤC SẢN PHẨM</a>
-          </li>
-          <li class="main-nav-item">
-            <a href="#tin-tuc" class="main-nav-link">TIN TỨC</a>
-          </li>
-          <li class="main-nav-item">
-            <a href="#lien-he" class="main-nav-link">LIÊN HỆ</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <!-- =========================================================================
-       2. HERO SLIDER SECTION (3 Sliders: Bốc Tách CAD, Giao Hàng & Đồng Hành)
-       ========================================================================= -->
-  <section class="hero-slider-section" aria-label="Banner giới thiệu nổi bật">
-    <div class="hero-slider-container">
-      
-      <!-- Slide 1: Bốc tách khối lượng CAD -->
-      <div class="hero-slide-item active" data-slide="0">
-        <img src="assets/images/hero-slider-1.jpg" alt="Kỹ sư Cơ Điện Bình An bốc tách khối lượng bản vẽ CAD chuyên nghiệp" class="hero-slide-bg">
-        <div class="hero-overlay"></div>
-        <div class="custom-container position-relative z-2 py-5">
-          <div class="col-12 col-lg-7 text-start hero-content-col">
-            <div class="badge-red mb-3 shadow-sm">
-              <i class="fa-solid fa-compass-drafting me-1"></i> DỊCH VỤ CỐT LÕI
-            </div>
-            <h1 class="hero-heading mb-3">
-              Bốc Tách Khối Lượng<br>
-              <span class="text-light">Miễn Phí 100% Trong 24 Giờ</span>
-            </h1>
-            <p class="hero-subtitle mb-4">
-              Chỉ cần gửi bản vẽ CAD, đội ngũ kỹ sư Bình An hỗ trợ bốc tách chính xác, giúp Quý nhà thầu tối ưu nhân lực và đẩy nhanh tiến độ dự toán.
-            </p>
-            <div class="d-flex flex-wrap gap-3 pt-2">
-              <a href="https://zalo.me/0896555656" target="_blank" rel="noopener" class="btn btn-danger btn-lg px-4 py-2 text-uppercase fw-bold fs-6 d-inline-flex align-items-center gap-2 shadow" style="background-color: var(--color-secondary); border-color: var(--color-secondary);">
-                <i class="fa-solid fa-paper-plane"></i> Gửi Bản Vẽ Zalo
-              </a>
-              <a href="#dich-vu" class="btn btn-outline-light btn-lg px-4 py-2 text-uppercase fw-semibold fs-6 shadow-sm">
-                Tìm Hiểu Quy Trình
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2: Giao hàng tận chân công trình -->
-      <div class="hero-slide-item" data-slide="1">
-        <img src="assets/images/hero-slider-2.jpg" alt="Xe giao hàng vật tư cáp điện, ống luồn tận chân công trường Cơ Điện Bình An" class="hero-slide-bg">
-        <div class="hero-overlay"></div>
-        <div class="custom-container position-relative z-2 py-5">
-          <div class="col-12 col-lg-7 text-start hero-content-col">
-            <div class="badge-red mb-3 shadow-sm">
-              <i class="fa-solid fa-truck-fast me-1"></i> VẬN TẢI & PHÂN PHỐI
-            </div>
-            <h1 class="hero-heading mb-3">
-              Cung Cấp Vật Tư Chính Hãng<br>
-              <span class="text-light">Giao Tận Chân Công Trình</span>
-            </h1>
-            <p class="hero-subtitle mb-4">
-              Phân phối trực tiếp Cadivi, Panasonic, Sino, thiết bị Solar SUNTEK... Chiết khấu cạnh tranh nhất thị trường, đầy đủ chứng chỉ CO/CQ.
-            </p>
-            <div class="d-flex flex-wrap gap-3 pt-2">
-              <a href="#san-pham" class="btn btn-danger btn-lg px-4 py-2 text-uppercase fw-bold fs-6 d-inline-flex align-items-center gap-2 shadow" style="background-color: var(--color-secondary); border-color: var(--color-secondary);">
-                <i class="fa-solid fa-boxes-stacked"></i> Xem Báo Giá Vật Tư
-              </a>
-              <a href="tel:0896555656" class="btn btn-outline-light btn-lg px-4 py-2 text-uppercase fw-semibold fs-6 shadow-sm">
-                <i class="fa-solid fa-phone"></i> Hotline Dự Án
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3: Đồng hành cùng dự án -->
-      <div class="hero-slide-item" data-slide="2">
-        <img src="assets/images/hero-slider-3.jpg" alt="Đồng hành cùng dự án thi công lắp đặt điện nước cao tầng tại TP.HCM" class="hero-slide-bg">
-        <div class="hero-overlay"></div>
-        <div class="custom-container position-relative z-2 py-5">
-          <div class="col-12 col-lg-7 text-start hero-content-col">
-            <div class="badge-red mb-3 shadow-sm">
-              <i class="fa-solid fa-handshake me-1"></i> ĐỐI TÁC TIN CẬY
-            </div>
-            <h1 class="hero-heading mb-3">
-              Đồng Hành Cùng Nhà Thầu –<br>
-              <span class="text-light">Tối Ưu Chi Phí, Thắng Thầu Bền Vững</span>
-            </h1>
-            <p class="hero-subtitle mb-4">
-              Linh hoạt về tiến độ – Tối ưu về chi phí – Chuẩn mực về chất lượng. ĐẶC BIỆT: Hỗ trợ thu mua lại toàn bộ vật tư dôi dư sau nghiệm thu.
-            </p>
-            <div class="d-flex flex-wrap gap-3 pt-2">
-              <a href="#dich-vu" class="btn btn-danger btn-lg px-4 py-2 text-uppercase fw-bold fs-6 d-inline-flex align-items-center gap-2 shadow" style="background-color: var(--color-secondary); border-color: var(--color-secondary);">
-                Khám Phá Giải Pháp <i class="fa-solid fa-arrow-right small"></i>
-              </a>
-              <a href="#lien-he" class="btn btn-outline-light btn-lg px-4 py-2 text-uppercase fw-semibold fs-6 shadow-sm">
-                Gặp Gỡ Trực Tiếp
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- 3 Pagination Dots Controller -->
-    <div class="hero-pagination-dots" role="tablist" aria-label="Điều khiển slider">
-      <button class="hero-dot active" data-slide-target="0" aria-label="Slide 1 - Bốc tách khối lượng"></button>
-      <button class="hero-dot" data-slide-target="1" aria-label="Slide 2 - Giao hàng tận công trình"></button>
-      <button class="hero-dot" data-slide-target="2" aria-label="Slide 3 - Đồng hành dự án"></button>
-    </div>
-
-    <!-- Floating Dock Fixed on Right Edge -->
-    <aside class="floating-social-dock" aria-label="Kênh liên hệ nhanh">
-      <!-- Facebook -->
-      <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook" class="float-btn float-fb">
-        <i class="fa-brands fa-facebook-f fs-5"></i>
-      </a>
-      <!-- Zalo -->
-      <a href="https://zalo.me/0896555656" target="_blank" rel="noopener" title="Zalo" class="float-btn float-zalo">
-        Zalo
-      </a>
-      <!-- Phone Call -->
-      <a href="tel:0896555656" title="Gọi ngay Hotline" class="float-btn float-phone">
-        <i class="fa-solid fa-phone fs-6"></i>
-      </a>
-    </aside>
-
-    <!-- Floating Support Button at Bottom-Left -->
-    <button type="button" class="floating-support-btn" title="Tư vấn trực tuyến" aria-label="Mở hộp chat tư vấn">
-      <i class="fa-solid fa-comments fs-5"></i>
-    </button>
-  </section>
-
-  <!-- =========================================================================
-       3. SECTION GIỚI THIỆU (ABOUT US)
-       ========================================================================= -->
-  <section id="gioi-thieu" class="section-about">
-    <div class="custom-container">
-      <!-- Section Title & Subheading -->
-      <div class="mb-5 text-start" style="max-width: 860px;">
-        <h2 class="text-uppercase fw-extrabold fs-6 mb-2 d-flex align-items-center gap-2 text-brand-red">
-          <span style="display:inline-block; width: 24px; height: 2px; background-color: var(--color-secondary);"></span> 
-          VỀ CƠ ĐIỆN BÌNH AN
-        </h2>
-        <h3 class="display-6 fw-bold text-white mb-3" style="font-size: 2rem;">
-          Đối tác chiến lược tin cậy của các nhà thầu Cơ Điện & Xây dựng
-        </h3>
-        <p class="text-light opacity-75 fs-6 mb-0">
-          Công ty TNHH Đầu tư và Kỹ thuật Cơ điện Bình An được vận hành bởi đội ngũ kỹ sư dày dặn kinh nghiệm trong lĩnh vực M&E. Chúng tôi thấu hiểu áp lực về tiến độ, khối lượng bản vẽ và tối ưu chi phí của nhà thầu, và mong muốn trở thành đối tác đồng hành cùng Quý vị.
-        </p>
-      </div>
-
-      <!-- Two-Column Layout -->
-      <div class="row g-4 align-items-start">
-        <!-- Left Column (Ảnh Giao Hàng tận công trình) -->
-        <div class="col-12 col-lg-6">
-          <div class="about-feature-box mb-4 text-light opacity-90 small">
-            <p class="fw-bold text-white mb-2">Định hướng phát triển bền vững cùng nhà thầu:</p>
-            <p class="mb-0">Với phương châm đặt lợi ích và sự an tâm của khách hàng lên hàng đầu, Bình An không chỉ cung cấp vật tư chính hãng mà còn hỗ trợ giải pháp kỹ thuật bốc tách, kiểm tra hồ sơ dự thầu và cam kết thu hồi sản phẩm dôi dư.</p>
-          </div>
-          <!-- Hình ảnh giao hàng bên trái -->
-          <div class="about-img-frame" style="height: 290px;">
-            <img src="assets/images/about-giao-hang.jpg" alt="Đội xe giao hàng và nhân viên Cơ Điện Bình An bàn giao vật tư tại chân công trường" loading="lazy">
-            <div class="about-img-badge">
-              <i class="fa-solid fa-truck-fast text-gold"></i>
-              <span>Giao Hàng Tận Chân Công Trình Đúng Hẹn</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column (Ảnh Kỹ thuật bốc tách CAD bên phải) -->
-        <div class="col-12 col-lg-6">
-          <!-- Hình ảnh bản vẽ CAD bên phải -->
-          <div class="about-img-frame mb-4" style="height: 250px;">
-            <img src="assets/images/about-ky-thuat-cad.jpg" alt="Đội ngũ kỹ sư bốc tách khối lượng hệ thống điện CAD chi tiết Cơ Điện Bình An" loading="lazy">
-            <div class="about-img-badge">
-              <i class="fa-solid fa-compass-drafting text-danger"></i>
-              <span>Đội Ngũ Kỹ Sư Bốc Tách CAD Chuyên Sâu</span>
+    <!-- Custom Modular Stylesheets -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- 1. Header Section -->
+    <!-- =========================================================================
+     1. HEADER (Top bar, Branding Logo, Search Box, Hotline, Primary Nav)
+     ========================================================================= -->
+    <header class="site-header">
+      <!-- Top Utility Bar -->
+      <div class="custom-container py-3">
+        <div class="row align-items-center gy-3">
+          <!-- Left: Search Box -->
+          <div class="col-12 col-md-4 order-2 order-md-1">
+            <div class="search-wrapper">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                placeholder="Nhập nội dung tìm kiếm ..."
+                class="search-input"
+                aria-label="Tìm kiếm nội dung"
+              />
             </div>
           </div>
 
-          <!-- Thin Gold Horizontal Line -->
-          <div style="height: 1px; background-color: var(--color-accent-gold); opacity: 0.8; margin: 1.5rem 0;"></div>
-
-          <!-- Two Feature Items Side by Side -->
-          <div class="row g-3 mb-4">
-            <!-- Feature 1 -->
-            <div class="col-12 col-sm-6">
-              <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-                <div class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm" style="width: 42px; height: 42px;">
-                  <i class="fa-solid fa-user-gear text-primary-blue fs-6"></i>
-                </div>
-                <div>
-                  <h4 class="text-uppercase fw-bold text-white small mb-1">ĐỘI NGŨ KỸ SƯ GIỎI</h4>
-                  <p class="text-light opacity-75 mb-0" style="font-size: 0.78rem;">Kỹ sư dày dặn kinh nghiệm trong lĩnh vực M&E, hỗ trợ nhanh chóng và chính xác.</p>
-                </div>
+          <!-- Center: Branding Logo -->
+          <div class="col-12 col-md-4 text-center order-1 order-md-2">
+            <a
+              href="#"
+              class="d-inline-flex align-items-center justify-content-center gap-3 text-decoration-none"
+            >
+              <img
+                src="assets/images/logo-binh-an.png"
+                alt="Logo Cơ Điện Bình An"
+                class="brand-logo-img"
+              />
+              <div class="text-start">
+                <span class="d-block brand-company-sub"
+                  >Công ty TNHH Đầu tư & Kỹ thuật</span
+                >
+                <span class="d-block brand-company-name">CƠ ĐIỆN BÌNH AN</span>
               </div>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="col-12 col-sm-6">
-              <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-                <div class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm" style="width: 42px; height: 42px;">
-                  <i class="fa-solid fa-certificate text-brand-red fs-6"></i>
-                </div>
-                <div>
-                  <h4 class="text-uppercase fw-bold text-white small mb-1">CAM KẾT CHẤT LƯỢNG</h4>
-                  <p class="text-light opacity-75 mb-0" style="font-size: 0.78rem;">Linh hoạt về tiến độ, tối ưu về chi phí, chuẩn mực về chất lượng.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Solid Red Rounded Button -->
-          <div>
-            <a href="#" class="btn btn-danger px-4 py-2 rounded-3 text-uppercase fw-bold small shadow-sm d-inline-flex align-items-center gap-2" style="background-color: var(--color-secondary); border-color: var(--color-secondary);">
-              XEM THÊM CATALOGUE
-              <i class="fa-solid fa-arrow-down-to-bracket"></i>
             </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- =========================================================================
-       4. SECTION DỊCH VỤ NỔI BẬT (SERVICES)
-       ========================================================================= -->
-  <section id="dich-vu" class="section-services">
-    <div class="custom-container">
-      <!-- Section Title Header -->
-      <div class="text-center mx-auto mb-5" style="max-width: 760px;">
-        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-light border border-secondary-subtle small fw-bold text-brand-red text-uppercase mb-2 shadow-sm" style="font-size: 0.75rem;">
-          <i class="fa-solid fa-handshake"></i> GIẢI PHÁP ĐỒNG HÀNH CÙNG NHÀ THẦU M&E
-        </div>
-        <h2 class="display-6 fw-bold text-primary-blue mb-2">
-          3 Giải Pháp Cốt Lõi Tối Ưu Cho Dự Án
-        </h2>
-        <div style="width: 70px; height: 4px; background-color: var(--color-secondary); margin: 0.5rem auto 1rem; border-radius: 999px;"></div>
-        <p class="text-muted fs-6">
-          <em>"Linh hoạt về tiến độ – Tối ưu về chi phí – Chuẩn mực về chất lượng"</em><br>
-          Cơ Điện Bình An chia sẻ gánh nặng áp lực tiến độ và bài toán tài chính cùng Quý chủ đầu tư & Nhà thầu.
-        </p>
-      </div>
-
-      <!-- 3 Vertical Image Cards (Staggered Layout) -->
-      <div class="row g-4 align-items-stretch pt-2">
-        <!-- Service Card 1: Bóc tách khối lượng -->
-        <div class="col-12 col-md-4">
-          <div class="service-card p-4 h-100">
-            <!-- Ảnh nền thực tế: Bản vẽ CAD & Dự toán -->
-            <img src="assets/images/service-1-boc-tach-cad.jpg" alt="Bản vẽ CAD bốc tách khối lượng điện nước M&E Cơ Điện Bình An" class="service-bg-img" loading="lazy">
-            <div class="service-gradient-overlay"></div>
-
-            <!-- Badge góc trên -->
-            <div class="position-absolute top-0 start-0 m-3 z-2">
-              <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 shadow-sm" style="font-size: 0.7rem;">
-                <i class="fa-solid fa-bolt me-1"></i> Miễn phí 100%
-              </span>
-            </div>
-
-            <div class="position-relative z-1 text-start mt-auto">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <div class="service-num-badge">01</div>
-                <span class="badge rounded-pill bg-white text-dark small fw-semibold px-2 py-1" style="font-size: 0.7rem;">
-                  <i class="fa-regular fa-clock text-danger me-1"></i> Hỗ trợ 24H
-                </span>
+          <!-- Right: Hotline Project Contact -->
+          <div class="col-12 col-md-4 order-3 order-md-3">
+            <div class="d-flex justify-content-md-end align-items-center gap-3">
+              <div class="hotline-icon-box">
+                <i class="fa-solid fa-phone"></i>
               </div>
-              <h3 class="h5 fw-bold text-white mb-2">Bốc Tách Khối Lượng Miễn Phí 100%</h3>
-              <p class="text-light opacity-90 small mb-3">
-                Chỉ cần gửi bản vẽ CAD, đội ngũ kỹ sư Bình An hỗ trợ bốc tách khối lượng hệ thống điện chính xác trong <strong>24h</strong>, giúp anh em nhà thầu tối ưu tối đa nhân lực dự toán.
-              </p>
-              <div class="pt-2 border-top border-white-50 d-flex align-items-center justify-content-between">
-                <a href="https://zalo.me/0896555656" target="_blank" rel="noopener" class="btn-dual-action text-decoration-none">
-                  <span class="action-text"><i class="fa-solid fa-paper-plane me-1"></i> Gửi CAD qua Zalo</span>
-                  <span class="action-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Card 2 (Featured Card Elevated): Cung cấp vật tư chính hãng -->
-        <div class="col-12 col-md-4">
-          <div class="service-card card-featured p-4 h-100">
-            <!-- Ảnh nền thực tế: Cuộn cáp trung thế Cadivi công trình -->
-            <img src="assets/images/service-2-cap-cadivi.jpg" alt="Phân phối cuộn cáp điện lực Cadivi chính hãng tận chân công trình" class="service-bg-img" loading="lazy" style="object-position: center top;">
-            <div class="service-gradient-overlay" style="background: linear-gradient(to top, rgba(10, 25, 47, 0.96) 0%, rgba(11, 60, 140, 0.82) 50%, rgba(0, 0, 0, 0.25) 100%);"></div>
-
-            <!-- Badge góc trên -->
-            <div class="position-absolute top-0 end-0 m-3 z-2">
-              <span class="badge bg-danger text-uppercase fw-bold px-3 py-1 shadow-sm" style="font-size: 0.72rem; background-color: var(--color-secondary) !important;">
-                <i class="fa-solid fa-star me-1"></i> Chiết khấu tối đa
-              </span>
-            </div>
-
-            <div class="position-relative z-1 text-start mt-auto">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <div class="service-num-badge">02</div>
-                <span class="badge rounded-pill bg-warning text-dark small fw-bold px-2 py-1" style="font-size: 0.7rem;">
-                  Đầy đủ CO/CQ
-                </span>
-              </div>
-              <h3 class="h4 fw-bold text-white mb-2">Cung Cấp Vật Tư Chính Hãng – Giá Gốc</h3>
-              <p class="text-light opacity-90 small mb-3">
-                Phân phối trực tiếp các thương hiệu đầu ngành: <strong>Cadivi, Panasonic, Sino, thiết bị Solar SUNTEK...</strong> Chiết khấu cạnh tranh nhất, giao hàng tận chân công trình.
-              </p>
-              <div class="pt-2 border-top border-white-50 d-flex align-items-center justify-content-between">
-                <a href="#san-pham" class="btn-dual-action text-decoration-none">
-                  <span class="action-text"><i class="fa-solid fa-list-check me-1"></i> Nhận Báo Giá RFQ</span>
-                  <span class="action-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Card 3: Thu mua lại vật tư thừa -->
-        <div class="col-12 col-md-4">
-          <div class="service-card p-4 h-100">
-            <!-- Ảnh nền thực tế: Thu gom tập kết ống, thiết bị vật tư tồn đọng -->
-            <img src="assets/images/service-3-thu-mua-ton-kho.jpg" alt="Thu mua và điều phối vật tư, ống điện nước thừa tại bãi công trình" class="service-bg-img" loading="lazy" style="object-position: center center;">
-            <div class="service-gradient-overlay" style="background: linear-gradient(to top, rgba(10, 25, 47, 0.96) 0%, rgba(15, 30, 60, 0.8) 50%, rgba(0, 0, 0, 0.25) 100%);"></div>
-
-            <!-- Badge góc trên -->
-            <div class="position-absolute top-0 start-0 m-3 z-2">
-              <span class="badge bg-success text-uppercase fw-bold px-2 py-1 shadow-sm" style="font-size: 0.7rem;">
-                <i class="fa-solid fa-recycle me-1"></i> Đặc quyền duy nhất
-              </span>
-            </div>
-
-            <div class="position-relative z-1 text-start mt-auto">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <div class="service-num-badge">03</div>
-                <span class="badge rounded-pill bg-white text-dark small fw-semibold px-2 py-1" style="font-size: 0.7rem;">
-                  Tối ưu dòng vốn
-                </span>
-              </div>
-              <h3 class="h5 fw-bold text-white mb-2">ĐẶC BIỆT: Thu Mua Lại Vật Tư Thừa</h3>
-              <p class="text-light opacity-90 small mb-3">
-                Sau nghiệm thu, Bình An hỗ trợ <strong>thu mua lại toàn bộ vật tư dư thừa</strong> (chưa hoặc đã qua sử dụng, còn nguyên vẹn), giải quyết triệt để bài toán tồn kho và đọng vốn.
-              </p>
-              <div class="pt-2 border-top border-white-50 d-flex align-items-center justify-content-between">
-                <a href="tel:0941283024" class="btn-dual-action text-decoration-none">
-                  <span class="action-text"><i class="fa-solid fa-phone me-1"></i> Liên hệ Thu Mua</span>
-                  <span class="action-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
+              <div class="text-md-end">
+                <span class="d-block hotline-label"
+                  >Hotline dự án (Ms. Hằng)</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="hotline-number text-decoration-none"
+                  >0896 55 56 56</a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- =========================================================================
-       5. SECTION DANH MỤC SẢN PHẨM (PRODUCTS)
-       ========================================================================= -->
-  <section id="san-pham" class="section-products">
-    <div class="custom-container">
-      <!-- Section Title Header -->
-      <div class="text-center mx-auto mb-4" style="max-width: 650px;">
-        <div class="d-inline-block px-3 py-1 rounded-pill bg-white border border-secondary-subtle small fw-bold text-primary-blue text-uppercase mb-2 shadow-sm" style="font-size: 0.72rem;">
-          DANH MỤC SẢN PHẨM
-        </div>
-        <h2 class="h3 fw-bold text-primary-blue text-uppercase mb-2">
-          VẬT TƯ CƠ ĐIỆN CHÍNH HÃNG
-        </h2>
-        <!-- Double Red Accent Underline -->
-        <div class="d-flex flex-column align-items-center gap-1 mb-3">
-          <div style="width: 80px; height: 3px; background-color: var(--color-secondary); border-radius: 99px;"></div>
-          <div style="width: 48px; height: 2px; background-color: var(--color-secondary); border-radius: 99px;"></div>
-        </div>
-        <p class="text-muted small">
-          Phân phối trực tiếp các thương hiệu hàng đầu, đầy đủ CO/CQ, chiết khấu cạnh tranh, giao hàng tận chân công trình.
-        </p>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" role="tablist">
-        <button class="product-tab-btn active" data-filter="all">Tất Cả</button>
-        <button class="product-tab-btn" data-filter="cadivi">Cáp điện Cadivi</button>
-        <button class="product-tab-btn" data-filter="panasonic">Thiết bị điện Panasonic</button>
-        <button class="product-tab-btn" data-filter="sino">Thiết bị điện Sino</button>
-        <button class="product-tab-btn" data-filter="suntek">Thiết bị Solar SUNTEK</button>
-      </div>
-
-      <!-- Product Grid (4 cards/row, 8 cards total) -->
-      <div class="row g-3 mb-5" id="productGrid">
-        
-        <!-- Product 1: Cadivi Rulo Cáp Điện Lực -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col" data-category="cadivi">
-          <article class="product-card h-100">
-            <div>
-              <div class="product-img-box">
-                <img src="assets/images/prod-cadivi-rulo.jpg" alt="Rulo Cáp ngầm trung thế Cadivi chính hãng" loading="lazy">
-              </div>
-              <h3 class="h6 fw-bold text-dark mb-1 leading-snug">Cáp điện lực Cadivi CXV/SE/DSTA 24kV</h3>
-              <p class="text-muted small line-clamp-2 mb-3">Ruột đồng dẫn điện cao cấp, cách điện XLPE, giáp băng kim loại chịu lực.</p>
-            </div>
-            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
-              <span class="product-price-tag text-muted fw-semibold">Giá:</span>
-              <a href="tel:0896555656" class="text-brand-red text-decoration-none small fw-bold">Liên hệ <i class="fa-solid fa-angle-right small"></i></a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Product 2: Cadivi Cuộn Cáp Đôi & Đơn -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col" data-category="cadivi">
-          <article class="product-card h-100">
-            <div>
-              <div class="product-img-box">
-                <img src="assets/images/prod-cadivi-cuon.jpg" alt="Dây cáp điện lực hạ thế Cadivi cuộn chính hãng" loading="lazy">
-              </div>
-              <h3 class="h6 fw-bold text-dark mb-1 leading-snug">Dây cáp điện hạ thế Cadivi CV / VCm</h3>
-              <p class="text-muted small line-clamp-2 mb-3">Ruột đồng nguyên chất, vỏ bọc PVC chống cháy lan, đủ kích cỡ 1.5 - 50mm².</p>
-            </div>
-            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
-              <span class="product-price-tag text-muted fw-semibold">Giá:</span>
-              <a href="tel:0896555656" class="text-brand-red text-decoration-none small fw-bold">Liên hệ <i class="fa-solid fa-angle-right small"></i></a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Product 3: Aptomat MCB Panasonic -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col" data-category="panasonic">
-          <article class="product-card h-100">
-            <div>
-              <div class="product-img-box">
-                <img src="assets/images/prod-panasonic-mcb.jpg" alt="Aptomat MCB Panasonic 2P 32A chính hãng" loading="lazy">
-              </div>
-              <h3 class="h6 fw-bold text-dark mb-1 leading-snug">Aptomat MCB Panasonic 2P 32A 6kA</h3>
-              <p class="text-muted small line-clamp-2 mb-3">Bảo vệ quá tải và ngắn mạch tiêu chuẩn Nhật Bản, độ bền cơ điện vượt trội.</p>
-            </div>
-            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
-              <span class="product-price-tag text-muted fw-semibold">Giá:</span>
-              <a href="tel:0896555656" class="text-brand-red text-decoration-none small fw-bold">Liên hệ <i class="fa-solid fa-angle-right small"></i></a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Product 4: Công tắc ổ cắm Panasonic -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col" data-category="panasonic">
-          <article class="product-card h-100">
-            <div>
-              <div class="product-img-box">
-                <img src="assets/images/prod-panasonic-congtac.jpg" alt="Mặt hạt công tắc ổ cắm Panasonic cao cấp" loading="lazy">
-              </div>
-              <h3 class="h6 fw-bold text-dark mb-1 leading-snug">Công tắc & Ổ cắm Panasonic dòng Wide</h3>
-              <p class="text-muted small line-clamp-2 mb-3">Mặt hạt phím lớn hiện đại, tiếp điểm đồng nguyên chất, cắm êm ái chống giật.</p>
-            </div>
-            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
-              <span class="product-price-tag text-muted fw-semibold">Giá:</span>
-              <a href="tel:0896555656" class="text-brand-red text-decoration-none small fw-bold">Liên hệ <i class="fa-solid fa-angle-right small"></i></a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Product 5: Ống luồn PVC Sino -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col" data-category="sino">
-          <article class="product-card h-100">
-            <div>
-              <div class="product-img-box">
-                <img src="assets/images/prod-ong-luon-sino.jpg" alt="Ống luồn dây điện chống cháy Sino Vanlock" loading="lazy">
-              </div>
-              <h3 class="h6 fw-bold text-dark mb-1 leading-snug">Ống luồn dây điện Sino PVC chống dập</h3>
-              <p class="text-muted small line-clamp-2 mb-3">Độ bền nén cao, uốn lạnh linh hoạt, chuyên dụng đổ sàn bê tông công trình.</p>
-            </div>
-            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
-              <span class="product-price-tag text-muted fw-semibold">Giá:</span>
-              <a href="tel:0896555656" class="text-brand-red text-decoration-none small fw-bold">Liên hệ <i class="fa-solid fa-angle-right small"></i></a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Product 6: Phụ kiện ống nhựa M&E Sino -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col" data-category="sino">
-          <article class="product-card h-100">
-            <div>
-              <div class="product-img-box">
-                <img src="assets/images/prod-ong-nhua-phukien.jpg" alt="Ống luồn và phụ kiện hộp nối cút chia Sino" loading="lazy">
-              </div>
-              <h3 class="h6 fw-bold text-dark mb-1 leading-snug">Ống & Phụ kiện nối luồn cáp công trình</h3>
-              <p class="text-muted small line-clamp-2 mb-3">Hộp chia ngả, cút nối ren, đầu kẹp đồng bộ tiêu chuẩn thi công cơ điện M&E.</p>
-            </div>
-            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
-              <span class="product-price-tag text-muted fw-semibold">Giá:</span>
-              <a href="tel:0896555656" class="text-brand-red text-decoration-none small fw-bold">Liên hệ <i class="fa-solid fa-angle-right small"></i></a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Product 7: SUNTEK Tấm Pin -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col" data-category="suntek">
-          <article class="product-card h-100">
-            <div>
-              <div class="product-img-box">
-                <img src="assets/images/prod-suntek-solar.jpg" alt="Tấm pin năng lượng mặt trời SUNTEK Mono Half-cell" loading="lazy">
-              </div>
-              <h3 class="h6 fw-bold text-dark mb-1 leading-snug">Tấm pin năng lượng mặt trời SUNTEK 550W</h3>
-              <p class="text-muted small line-clamp-2 mb-3">Công nghệ Mono Half-cell hiệu suất 21.3%, khung nhôm anode bền vững thời tiết.</p>
-            </div>
-            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
-              <span class="product-price-tag text-muted fw-semibold">Giá:</span>
-              <a href="tel:0896555656" class="text-brand-red text-decoration-none small fw-bold">Liên hệ <i class="fa-solid fa-angle-right small"></i></a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Product 8: SUNTEK Inverter & Phụ Kiện Solar -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col" data-category="suntek">
-          <article class="product-card h-100">
-            <div>
-              <div class="product-img-box">
-                <img src="assets/images/prod-suntek-solar.jpg" alt="Biến tần hòa lưới Inverter Solar SUNTEK" loading="lazy">
-              </div>
-              <h3 class="h6 fw-bold text-dark mb-1 leading-snug">Bộ thiết bị Solar & Inverter SUNTEK</h3>
-              <p class="text-muted small line-clamp-2 mb-3">Biến tần hòa lưới thông minh, quản lý qua App, phụ kiện lắp đặt trọn gói.</p>
-            </div>
-            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
-              <span class="product-price-tag text-muted fw-semibold">Giá:</span>
-              <a href="tel:0896555656" class="text-brand-red text-decoration-none small fw-bold">Liên hệ <i class="fa-solid fa-angle-right small"></i></a>
-            </div>
-          </article>
-        </div>
-
-      </div>
-
-      <!-- Outlined Blue CTA Button -->
-      <div class="text-center">
-        <a href="#" class="btn btn-outline-primary px-4 py-2 text-uppercase fw-bold small rounded-3" style="color: var(--color-primary); border-color: var(--color-primary);">
-          Xem tất cả sản phẩm <i class="fa-solid fa-arrow-right ms-1"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       6. SECTION TIN TỨC (NEWS & ARTICLES)
-       ========================================================================= -->
-  <section id="tin-tuc" class="section-news">
-    <div class="custom-container">
-      <!-- Section Title Header -->
-      <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-        <h2 class="display-6 fw-bold text-primary-blue mb-0">
-          Tin tức
-        </h2>
-        <div style="width: 50px; height: 3.5px; background-color: var(--color-secondary); margin: 0.75rem auto 0; border-radius: 99px;"></div>
-      </div>
-
-      <!-- News Carousel Wrapper -->
-      <div class="position-relative px-md-4">
-        <!-- Prev Button -->
-        <button id="newsPrevBtn" type="button" class="btn btn-light rounded-circle shadow-sm border position-absolute top-50 start-0 translate-middle-y z-2 d-none d-md-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" aria-label="Tin trước">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-
-        <!-- 3 News Cards Row -->
-        <div class="row g-4" id="newsContainer">
-          
-          <!-- News Card 1 -->
-          <div class="col-12 col-md-4">
-            <article class="news-card h-100">
-              <div>
-                <div class="wireframe-img position-relative" style="height: 190px;">
-                  <span class="news-badge">Kỹ thuật M&E</span>
-                  <i class="fa-regular fa-image display-6 text-muted mb-1"></i>
-                  <span style="font-size: 0.7rem;">[ Ảnh minh họa tin tức ]</span>
-                </div>
-                <div class="p-4">
-                  <h3 class="h6 fw-bold text-dark line-clamp-2 mb-2">
-                    Kinh nghiệm bốc tách khối lượng hệ thống điện công trình giảm thiểu sai số
-                  </h3>
-                  <p class="text-muted small line-clamp-3 mb-0">
-                    Tổng hợp các bước rà soát bản vẽ thiết kế, kiểm tra sự đồng bộ giữa mặt bằng và sơ đồ nguyên lý giúp nhà thầu hạn chế phát sinh chi phí…
-                  </p>
-                </div>
-              </div>
-              <div class="p-4 pt-0 d-flex align-items-center justify-content-between border-top mt-2">
-                <a href="#" class="text-brand-red text-uppercase fw-bold small text-decoration-none">ĐỌC TIẾP →</a>
-                <span class="text-muted" style="font-size: 0.75rem;"><i class="fa-regular fa-calendar me-1"></i> 30/9/2026</span>
-              </div>
-            </article>
-          </div>
-
-          <!-- News Card 2 -->
-          <div class="col-12 col-md-4">
-            <article class="news-card h-100">
-              <div>
-                <div class="wireframe-img position-relative" style="height: 190px;">
-                  <span class="news-badge">Vật tư thiết bị</span>
-                  <i class="fa-regular fa-image display-6 text-muted mb-1"></i>
-                  <span style="font-size: 0.7rem;">[ Ảnh minh họa tin tức ]</span>
-                </div>
-                <div class="p-4">
-                  <h3 class="h6 fw-bold text-dark line-clamp-2 mb-2">
-                    Cập nhật bảng giá cáp điện Cadivi và chính sách chiết khấu nhà thầu mới nhất
-                  </h3>
-                  <p class="text-muted small line-clamp-3 mb-0">
-                    Cơ Điện Bình An gửi tới Quý khách hàng biểu giá chiết khấu mới nhất kèm giấy chứng nhận chất lượng CO/CQ và tiến độ bàn giao nhanh chóng…
-                  </p>
-                </div>
-              </div>
-              <div class="p-4 pt-0 d-flex align-items-center justify-content-between border-top mt-2">
-                <a href="#" class="text-brand-red text-uppercase fw-bold small text-decoration-none">ĐỌC TIẾP →</a>
-                <span class="text-muted" style="font-size: 0.75rem;"><i class="fa-regular fa-calendar me-1"></i> 28/9/2026</span>
-              </div>
-            </article>
-          </div>
-
-          <!-- News Card 3 -->
-          <div class="col-12 col-md-4">
-            <article class="news-card h-100">
-              <div>
-                <div class="wireframe-img position-relative" style="height: 190px;">
-                  <span class="news-badge">Chính sách đối tác</span>
-                  <i class="fa-regular fa-image display-6 text-muted mb-1"></i>
-                  <span style="font-size: 0.7rem;">[ Ảnh minh họa tin tức ]</span>
-                </div>
-                <div class="p-4">
-                  <h3 class="h6 fw-bold text-dark line-clamp-2 mb-2">
-                    Giải pháp thu hồi vật tư tồn kho sau quyết toán công trình xây dựng
-                  </h3>
-                  <p class="text-muted small line-clamp-3 mb-0">
-                    Chia sẻ quy trình kiểm đếm, thẩm định và phương án thu mua lại dây cáp, thiết bị đóng cắt dư thừa giúp bảo toàn dòng tiền cho đơn vị thi công…
-                  </p>
-                </div>
-              </div>
-              <div class="p-4 pt-0 d-flex align-items-center justify-content-between border-top mt-2">
-                <a href="#" class="text-brand-red text-uppercase fw-bold small text-decoration-none">ĐỌC TIẾP →</a>
-                <span class="text-muted" style="font-size: 0.75rem;"><i class="fa-regular fa-calendar me-1"></i> 25/9/2026</span>
-              </div>
-            </article>
-          </div>
-
-        </div>
-
-        <!-- Next Button -->
-        <button id="newsNextBtn" type="button" class="btn btn-light rounded-circle shadow-sm border position-absolute top-50 end-0 translate-middle-y z-2 d-none d-md-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" aria-label="Tin tiếp theo">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       7. SECTION ĐỐI TÁC & KHÁCH HÀNG (PARTNERS)
-       ========================================================================= -->
-  <section class="section-partners">
-    <div class="custom-container">
-      <!-- Section Title Header -->
-      <div class="text-center mx-auto mb-4" style="max-width: 650px;">
-        <h2 class="display-6 fw-bold text-primary-blue mb-0">
-          Đối tác & khách hàng
-        </h2>
-        <!-- Thin Gold/Red Accent Line -->
-        <div class="d-flex justify-content-center align-items-center gap-1 my-3">
-          <div style="width: 44px; height: 2px; background-color: var(--color-accent-gold);"></div>
-          <div style="width: 28px; height: 2px; background-color: var(--color-secondary);"></div>
-        </div>
-        <p class="text-muted small">
-          Cơ Điện Bình An đồng hành cùng chủ đầu tư và các nhà thầu trong những dự án hiệu quả, minh bạch và bền vững.
-        </p>
-      </div>
-
-      <!-- Partners Logo Grid / Carousel Simulation -->
-      <div class="overflow-hidden py-2">
-        <div class="d-grid partner-logo-grid gap-3" style="grid-template-columns: repeat(5, 1fr);">
-          <!-- Logo 1: Cadivi -->
-          <div class="partner-logo-card">
-            <span class="fw-extrabold text-secondary fs-6 tracking-wider">CADIVI</span>
-            <span class="text-muted mt-1 text-uppercase" style="font-size: 0.65rem;">[ Logo Dây Cáp Điện ]</span>
-          </div>
-          <!-- Logo 2: Panasonic -->
-          <div class="partner-logo-card">
-            <span class="fw-extrabold text-secondary fs-6 tracking-wider">PANASONIC</span>
-            <span class="text-muted mt-1 text-uppercase" style="font-size: 0.65rem;">[ Thiết Bị Điện ]</span>
-          </div>
-          <!-- Logo 3: Sino -->
-          <div class="partner-logo-card">
-            <span class="fw-extrabold text-secondary fs-6 tracking-wider">SINO - VANLOCK</span>
-            <span class="text-muted mt-1 text-uppercase" style="font-size: 0.65rem;">[ Ống Luồn & Đóng Cắt ]</span>
-          </div>
-          <!-- Logo 4: Suntek -->
-          <div class="partner-logo-card">
-            <span class="fw-extrabold text-secondary fs-6 tracking-wider">SUNTEK SOLAR</span>
-            <span class="text-muted mt-1 text-uppercase" style="font-size: 0.65rem;">[ Năng Lượng Mặt Trời ]</span>
-          </div>
-          <!-- Logo 5: Schneider -->
-          <div class="partner-logo-card opacity-75">
-            <span class="fw-extrabold text-secondary fs-6 tracking-wider">SCHNEIDER</span>
-            <span class="text-muted mt-1 text-uppercase" style="font-size: 0.65rem;">[ Đối Tác Dự Án... ]</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pagination Indicators -->
-      <div class="d-flex justify-content-center align-items-center gap-1 mt-4">
-        <span style="width: 24px; height: 5px; border-radius: 99px; background-color: var(--color-primary);"></span>
-        <span style="width: 8px; height: 5px; border-radius: 99px; background-color: var(--color-slate-300);"></span>
-        <span style="width: 8px; height: 5px; border-radius: 99px; background-color: var(--color-slate-300);"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       8. FOOTER (Company Info, Services Nav, Newsletter Signup, Copyright)
-       ========================================================================= -->
-  <footer id="lien-he" class="site-footer">
-    <div class="custom-container">
-      <div class="row g-4 mb-5">
-        
-        <!-- Column 1: Company Profile -->
-        <div class="col-12 col-md-5">
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <img src="assets/images/logo-binh-an.png" alt="Logo Cơ Điện Bình An" class="brand-logo-img-footer">
-            <div>
-              <span class="d-block text-secondary-subtle small fw-medium text-uppercase" style="font-size: 0.7rem;">CÔNG TY TNHH ĐẦU TƯ VÀ KỸ THUẬT</span>
-              <span class="d-block fw-bold text-white fs-6">CƠ ĐIỆN BÌNH AN</span>
-            </div>
-          </div>
-
-          <p class="text-light opacity-75 small mb-3">
-            Đơn vị uy tín chuyên sâu về tư vấn giải pháp bốc tách khối lượng M&E, phân phối vật tư cơ điện chính hãng và hỗ trợ thu hồi vật tư công trình.
-          </p>
-
-          <address class="mb-0 text-light opacity-90 small fst-normal">
-            <div class="d-flex align-items-start gap-2 mb-2">
-              <i class="fa-solid fa-location-dot text-brand-red mt-1"></i>
-              <span>1148A Phạm Văn Đồng, P. Thủ Đức, Tp. Hồ Chí Minh</span>
-            </div>
-            <div class="d-flex align-items-start gap-2 mb-2">
-              <i class="fa-solid fa-phone text-gold mt-1"></i>
-              <div>
-                <div>0896 55 56 56 (Ms. Hằng - Dự án)</div>
-                <div>0941 283 024 (Mr. Thưởng - Khách lẻ / Thầu thợ)</div>
-              </div>
-            </div>
-            <div class="d-flex align-items-center gap-2">
-              <i class="fa-solid fa-envelope text-gold"></i>
-              <a href="mailto:quangthuongqn@gmail.com" class="text-light text-decoration-underline">quangthuongqn@gmail.com</a>
-            </div>
-          </address>
-        </div>
-
-        <!-- Column 2: Quick Links / Featured Services -->
-        <div class="col-12 col-sm-6 col-md-3">
-          <h3 class="h6 text-uppercase fw-bold text-white mb-2">
-            DỊCH VỤ NỔI BẬT
-          </h3>
-          <div style="width: 36px; height: 2px; background-color: var(--color-secondary); margin-bottom: 1rem;"></div>
-          
-          <ul class="d-flex flex-column gap-2 small">
-            <li>
-              <a href="#dich-vu" class="footer-nav-link text-decoration-none">
-                <span class="text-gold fw-bold">&gt;</span> Bốc tách khối lượng miễn phí
+      <!-- Navigation Bar (Solid Brand Blue) -->
+      <nav class="main-navbar" aria-label="Điều hướng chính">
+        <div class="custom-container">
+          <ul class="main-nav-list mb-0">
+            <li class="main-nav-item active position-relative">
+              <a href="#" class="main-nav-link">
+                <i class="fa-solid fa-house small"></i> TRANG CHỦ
               </a>
             </li>
-            <li>
-              <a href="#dich-vu" class="footer-nav-link text-decoration-none">
-                <span class="text-gold fw-bold">&gt;</span> Cung cấp vật tư chính hãng
-              </a>
+            <li class="main-nav-item">
+              <a href="#gioi-thieu" class="main-nav-link">GIỚI THIỆU</a>
             </li>
-            <li>
-              <a href="#dich-vu" class="footer-nav-link text-decoration-none">
-                <span class="text-gold fw-bold">&gt;</span> Thu mua lại vật tư thừa
-              </a>
+            <li class="main-nav-item">
+              <a href="#dich-vu" class="main-nav-link">DỊCH VỤ NỔI BẬT</a>
             </li>
-            <li>
-              <a href="#san-pham" class="footer-nav-link text-decoration-none">
-                <span class="text-gold fw-bold">&gt;</span> Danh mục sản phẩm
-              </a>
+            <li class="main-nav-item">
+              <a href="#san-pham" class="main-nav-link">DANH MỤC SẢN PHẨM</a>
             </li>
-            <li>
-              <a href="#tin-tuc" class="footer-nav-link text-decoration-none">
-                <span class="text-gold fw-bold">&gt;</span> Tin tức & kiến thức
-              </a>
+            <li class="main-nav-item">
+              <a href="#tin-tuc" class="main-nav-link">TIN TỨC</a>
+            </li>
+            <li class="main-nav-item">
+              <a href="#lien-he" class="main-nav-link">LIÊN HỆ</a>
             </li>
           </ul>
         </div>
+      </nav>
+    </header>
 
-        <!-- Column 3: Newsletter Form -->
-        <div class="col-12 col-sm-6 col-md-4">
-          <h3 class="h6 text-uppercase fw-bold text-white mb-2">
-            ĐĂNG KÝ NHẬN TIN
+    <!-- 2. Hero Slider Section -->
+    <!-- =========================================================================
+     2. HERO SLIDER SECTION (3 Sliders: Bốc Tách CAD, Giao Hàng & Đồng Hành)
+     ========================================================================= -->
+    <section class="hero-slider-section" aria-label="Banner giới thiệu nổi bật">
+      <div class="hero-slider-container">
+        <!-- Slide 1: Bốc tách khối lượng CAD -->
+        <div class="hero-slide-item active" data-slide="0">
+          <img
+            src="assets/images/hero-slider-1.jpg"
+            alt="Kỹ sư Cơ Điện Bình An bốc tách khối lượng bản vẽ CAD chuyên nghiệp"
+            class="hero-slide-bg"
+          />
+          <div class="hero-overlay"></div>
+          <div class="custom-container position-relative z-2 py-5">
+            <div class="row">
+              <div class="col-12 col-lg-7 text-start hero-content-col">
+                <div class="badge-red mb-3 shadow-sm">
+                  <i class="fa-solid fa-compass-drafting me-1"></i> DỊCH VỤ CỐT
+                  LÕI
+                </div>
+                <h1 class="hero-heading mb-3">
+                  Bốc Tách Khối Lượng<br />
+                  <span class="text-light">Miễn Phí 100% Trong 24 Giờ</span>
+                </h1>
+                <p class="hero-subtitle mb-4">
+                  Chỉ cần gửi bản vẽ CAD, đội ngũ kỹ sư Bình An hỗ trợ bốc tách
+                  chính xác, giúp Quý nhà thầu tối ưu nhân lực và đẩy nhanh tiến
+                  độ dự toán.
+                </p>
+                <div class="d-flex flex-wrap gap-3 pt-2">
+                  <a
+                    href="https://zalo.me/0896555656"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-danger btn-lg px-4 py-2 text-uppercase fw-bold fs-6 d-inline-flex align-items-center gap-2 shadow"
+                    style="
+                      background-color: var(--color-secondary);
+                      border-color: var(--color-secondary);
+                    "
+                  >
+                    <i class="fa-solid fa-paper-plane"></i> Gửi Bản Vẽ Zalo
+                  </a>
+                  <a
+                    href="#dich-vu"
+                    class="btn btn-outline-light btn-lg px-4 py-2 text-uppercase fw-semibold fs-6 shadow-sm"
+                  >
+                    Tìm Hiểu Quy Trình
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Giao hàng tận chân công trình -->
+        <div class="hero-slide-item" data-slide="1">
+          <img
+            src="assets/images/hero-slider-2.jpg"
+            alt="Xe giao hàng vật tư cáp điện, ống luồn tận chân công trường Cơ Điện Bình An"
+            class="hero-slide-bg"
+          />
+          <div class="hero-overlay"></div>
+          <div class="custom-container position-relative z-2 py-5">
+            <div class="row">
+              <div class="col-12 col-lg-7 text-start hero-content-col">
+                <div class="badge-red mb-3 shadow-sm">
+                  <i class="fa-solid fa-truck-fast me-1"></i> VẬN TẢI & PHÂN
+                  PHỐI
+                </div>
+                <h1 class="hero-heading mb-3">
+                  Cung Cấp Vật Tư Chính Hãng<br />
+                  <span class="text-light">Giao Tận Chân Công Trình</span>
+                </h1>
+                <p class="hero-subtitle mb-4">
+                  Phân phối trực tiếp Cadivi, Panasonic, Sino, thiết bị Solar
+                  SUNTEK... Chiết khấu cạnh tranh nhất thị trường, đầy đủ chứng
+                  chỉ CO/CQ.
+                </p>
+                <div class="d-flex flex-wrap gap-3 pt-2">
+                  <a
+                    href="#san-pham"
+                    class="btn btn-danger btn-lg px-4 py-2 text-uppercase fw-bold fs-6 d-inline-flex align-items-center gap-2 shadow"
+                    style="
+                      background-color: var(--color-secondary);
+                      border-color: var(--color-secondary);
+                    "
+                  >
+                    <i class="fa-solid fa-boxes-stacked"></i> Xem Báo Giá Vật Tư
+                  </a>
+                  <a
+                    href="tel:0896555656"
+                    class="btn btn-outline-light btn-lg px-4 py-2 text-uppercase fw-semibold fs-6 shadow-sm"
+                  >
+                    <i class="fa-solid fa-phone"></i> Hotline Dự Án
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Đồng hành cùng dự án -->
+        <div class="hero-slide-item" data-slide="2">
+          <img
+            src="assets/images/hero-slider-3.jpg"
+            alt="Đồng hành cùng dự án thi công lắp đặt điện nước cao tầng tại TP.HCM"
+            class="hero-slide-bg"
+          />
+          <div class="hero-overlay"></div>
+          <div class="custom-container position-relative z-2 py-5">
+            <div class="row">
+              <div class="col-12 col-lg-7 text-start hero-content-col">
+                <div class="badge-red mb-3 shadow-sm">
+                  <i class="fa-solid fa-handshake me-1"></i> ĐỐI TÁC TIN CẬY
+                </div>
+                <h1 class="hero-heading mb-3">
+                  Đồng Hành Cùng Nhà Thầu –<br />
+                  <span class="text-light"
+                    >Tối Ưu Chi Phí, Thắng Thầu Bền Vững</span
+                  >
+                </h1>
+                <p class="hero-subtitle mb-4">
+                  Linh hoạt về tiến độ – Tối ưu về chi phí – Chuẩn mực về chất
+                  lượng. ĐẶC BIỆT: Hỗ trợ thu mua lại toàn bộ vật tư dôi dư sau
+                  nghiệm thu.
+                </p>
+                <div class="d-flex flex-wrap gap-3 pt-2">
+                  <a
+                    href="#dich-vu"
+                    class="btn btn-danger btn-lg px-4 py-2 text-uppercase fw-bold fs-6 d-inline-flex align-items-center gap-2 shadow"
+                    style="
+                      background-color: var(--color-secondary);
+                      border-color: var(--color-secondary);
+                    "
+                  >
+                    Khám Phá Giải Pháp
+                    <i class="fa-solid fa-arrow-right small"></i>
+                  </a>
+                  <a
+                    href="#lien-he"
+                    class="btn btn-outline-light btn-lg px-4 py-2 text-uppercase fw-semibold fs-6 shadow-sm"
+                  >
+                    Gặp Gỡ Trực Tiếp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Pagination Dots Controller -->
+      <div
+        class="hero-pagination-dots"
+        role="tablist"
+        aria-label="Điều khiển slider"
+      >
+        <button
+          class="hero-dot active"
+          data-slide-target="0"
+          aria-label="Slide 1 - Bốc tách khối lượng"
+        ></button>
+        <button
+          class="hero-dot"
+          data-slide-target="1"
+          aria-label="Slide 2 - Giao hàng tận công trình"
+        ></button>
+        <button
+          class="hero-dot"
+          data-slide-target="2"
+          aria-label="Slide 3 - Đồng hành dự án"
+        ></button>
+      </div>
+
+      <!-- Floating Dock Fixed on Right Edge -->
+      <aside class="floating-social-dock" aria-label="Kênh liên hệ nhanh">
+        <!-- Facebook -->
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener"
+          title="Facebook"
+          class="float-btn float-fb"
+        >
+          <i class="fa-brands fa-facebook-f fs-5"></i>
+        </a>
+        <!-- Zalo -->
+        <a
+          href="https://zalo.me/0896555656"
+          target="_blank"
+          rel="noopener"
+          title="Zalo"
+          class="float-btn float-zalo"
+        >
+          Zalo
+        </a>
+        <!-- Phone Call -->
+        <a
+          href="tel:0896555656"
+          title="Gọi ngay Hotline"
+          class="float-btn float-phone"
+        >
+          <i class="fa-solid fa-phone fs-6"></i>
+        </a>
+      </aside>
+
+      <!-- Floating Support Button at Bottom-Left -->
+      <button
+        type="button"
+        class="floating-support-btn"
+        title="Tư vấn trực tuyến"
+        aria-label="Mở hộp chat tư vấn"
+      >
+        <i class="fa-solid fa-comments fs-5"></i>
+      </button>
+    </section>
+
+    <!-- 3. Giới Thiệu (About) Section -->
+    <!-- =========================================================================
+     3. SECTION GIỚI THIỆU (ABOUT US)
+     ========================================================================= -->
+    <section id="gioi-thieu" class="section-about">
+      <div class="custom-container">
+        <!-- Section Title & Subheading -->
+        <div class="mb-5 text-start" style="max-width: 860px">
+          <h2
+            class="text-uppercase fw-extrabold fs-6 mb-2 d-flex align-items-center gap-2 text-brand-red"
+          >
+            <span
+              style="
+                display: inline-block;
+                width: 24px;
+                height: 2px;
+                background-color: var(--color-secondary);
+              "
+            ></span>
+            VỀ CƠ ĐIỆN BÌNH AN
+          </h2>
+          <h3 class="display-6 fw-bold text-white mb-3" style="font-size: 2rem">
+            Đối tác chiến lược tin cậy của các nhà thầu Cơ Điện & Xây dựng
           </h3>
-          <div style="width: 36px; height: 2px; background-color: var(--color-secondary); margin-bottom: 1rem;"></div>
-          <p class="text-light opacity-75 small mb-3">
-            Nhận thông tin báo giá và chính sách chiết khấu mới nhất từ Cơ Điện Bình An.
+          <p class="text-light opacity-75 fs-6 mb-0">
+            Công ty TNHH Đầu tư và Kỹ thuật Cơ điện Bình An được vận hành bởi
+            đội ngũ kỹ sư dày dặn kinh nghiệm trong lĩnh vực M&E. Chúng tôi thấu
+            hiểu áp lực về tiến độ, khối lượng bản vẽ và tối ưu chi phí của nhà
+            thầu, và mong muốn trở thành đối tác đồng hành cùng Quý vị.
           </p>
-
-          <form id="newsletterForm" class="d-flex flex-column gap-2">
-            <div>
-              <input 
-                type="text" 
-                placeholder="Họ tên" 
-                class="footer-form-input" 
-                required
-                aria-label="Họ tên"
-              />
-            </div>
-            <div>
-              <input 
-                type="tel" 
-                placeholder="Số điện thoại" 
-                class="footer-form-input" 
-                required
-                aria-label="Số điện thoại"
-              />
-            </div>
-            <div>
-              <input 
-                type="email" 
-                placeholder="Email" 
-                class="footer-form-input" 
-                aria-label="Địa chỉ email"
-              />
-            </div>
-            <button 
-              type="submit" 
-              class="btn btn-danger py-2 text-uppercase fw-bold small rounded-3 mt-1 shadow-sm d-flex align-items-center justify-content-center gap-1"
-              style="background-color: var(--color-secondary); border-color: var(--color-secondary);"
-            >
-              ĐĂNG KÝ ↗
-            </button>
-          </form>
         </div>
 
-      </div>
+        <!-- Two-Column Layout -->
+        <div class="row g-4 align-items-start">
+          <!-- Left Column (Ảnh Giao Hàng tận công trình) -->
+          <div class="col-12 col-lg-6">
+            <div class="about-feature-box mb-4 text-light opacity-90 small">
+              <p class="fw-bold text-white mb-2">
+                Định hướng phát triển bền vững cùng nhà thầu:
+              </p>
+              <p class="mb-0">
+                Với phương châm đặt lợi ích và sự an tâm của khách hàng lên hàng
+                đầu, Bình An không chỉ cung cấp vật tư chính hãng mà còn hỗ trợ
+                giải pháp kỹ thuật bốc tách, kiểm tra hồ sơ dự thầu và cam kết
+                thu hồi sản phẩm dôi dư.
+              </p>
+            </div>
+            <!-- Hình ảnh giao hàng bên trái -->
+            <div class="about-img-frame" style="height: 290px">
+              <img
+                src="assets/images/about-giao-hang.jpg"
+                alt="Đội xe giao hàng và nhân viên Cơ Điện Bình An bàn giao vật tư tại chân công trường"
+                loading="lazy"
+              />
+              <div class="about-img-badge">
+                <i class="fa-solid fa-truck-fast text-gold"></i>
+                <span>Giao Hàng Tận Chân Công Trình Đúng Hẹn</span>
+              </div>
+            </div>
+          </div>
 
-      <!-- Copyright Sub-footer -->
-      <div class="pt-4 border-top border-secondary-subtle d-flex flex-column flex-sm-row align-items-center justify-content-between small text-secondary gap-2" style="border-color: rgba(255,255,255,0.15) !important;">
-        <p class="mb-0 text-light opacity-50" style="font-size: 0.75rem;">
-          &copy; 2026 CTY TNHH ĐẦU TƯ & KỸ THUẬT CƠ ĐIỆN BÌNH AN. Design by SOTA
-        <div class="d-flex align-items-center gap-3" style="font-size: 0.75rem;">
-          <span class="text-gold">M&E Engineering & Electrical Supplies</span>
-          <span class="text-light opacity-50">Thủ Đức, TP. Hồ Chí Minh</span>
+          <!-- Right Column (Ảnh Kỹ thuật bốc tách CAD bên phải) -->
+          <div class="col-12 col-lg-6">
+            <!-- Hình ảnh bản vẽ CAD bên phải -->
+            <div class="about-img-frame mb-4" style="height: 250px">
+              <img
+                src="assets/images/about-ky-thuat-cad.jpg"
+                alt="Đội ngũ kỹ sư bốc tách khối lượng hệ thống điện CAD chi tiết Cơ Điện Bình An"
+                loading="lazy"
+              />
+              <div class="about-img-badge">
+                <i class="fa-solid fa-compass-drafting text-danger"></i>
+                <span>Đội Ngũ Kỹ Sư Bốc Tách CAD Chuyên Sâu</span>
+              </div>
+            </div>
+
+            <!-- Thin Gold Horizontal Line -->
+            <div
+              style="
+                height: 1px;
+                background-color: var(--color-accent-gold);
+                opacity: 0.8;
+                margin: 1.5rem 0;
+              "
+            ></div>
+
+            <!-- Two Feature Items Side by Side -->
+            <div class="row g-3 mb-4">
+              <!-- Feature 1 -->
+              <div class="col-12 col-sm-6">
+                <div
+                  class="d-flex align-items-start gap-3 p-3 rounded-3"
+                  style="
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                  "
+                >
+                  <div
+                    class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm"
+                    style="width: 42px; height: 42px"
+                  >
+                    <i class="fa-solid fa-user-gear text-primary-blue fs-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-uppercase fw-bold text-white small mb-1">
+                      ĐỘI NGŨ KỸ SƯ GIỎI
+                    </h4>
+                    <p
+                      class="text-light opacity-75 mb-0"
+                      style="font-size: 0.78rem"
+                    >
+                      Kỹ sư dày dặn kinh nghiệm trong lĩnh vực M&E, hỗ trợ nhanh
+                      chóng và chính xác.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="col-12 col-sm-6">
+                <div
+                  class="d-flex align-items-start gap-3 p-3 rounded-3"
+                  style="
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                  "
+                >
+                  <div
+                    class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm"
+                    style="width: 42px; height: 42px"
+                  >
+                    <i class="fa-solid fa-certificate text-brand-red fs-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-uppercase fw-bold text-white small mb-1">
+                      CAM KẾT CHẤT LƯỢNG
+                    </h4>
+                    <p
+                      class="text-light opacity-75 mb-0"
+                      style="font-size: 0.78rem"
+                    >
+                      Linh hoạt về tiến độ, tối ưu về chi phí, chuẩn mực về chất
+                      lượng.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Solid Red Rounded Button -->
+            <div>
+              <a
+                href="#"
+                class="btn btn-danger px-4 py-2 rounded-3 text-uppercase fw-bold small shadow-sm d-inline-flex align-items-center gap-2"
+                style="
+                  background-color: var(--color-secondary);
+                  border-color: var(--color-secondary);
+                "
+              >
+                XEM THÊM CATALOGUE
+                <i class="fa-solid fa-arrow-down-to-bracket"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Bootstrap 5 Bundle JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 4. Dịch Vụ Nổi Bật (Services) Section -->
+    <!-- =========================================================================
+     4. SECTION DỊCH VỤ NỔI BẬT (SERVICES)
+     ========================================================================= -->
+    <section id="dich-vu" class="section-services">
+      <div class="custom-container">
+        <!-- Section Title Header -->
+        <div class="text-center mx-auto mb-5" style="max-width: 760px">
+          <div
+            class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-light border border-secondary-subtle small fw-bold text-brand-red text-uppercase mb-2 shadow-sm"
+            style="font-size: 0.75rem"
+          >
+            <i class="fa-solid fa-handshake"></i> GIẢI PHÁP ĐỒNG HÀNH CÙNG NHÀ
+            THẦU M&E
+          </div>
+          <h2 class="display-6 fw-bold text-primary-blue mb-2">
+            3 Giải Pháp Cốt Lõi Tối Ưu Cho Dự Án
+          </h2>
+          <div
+            style="
+              width: 70px;
+              height: 4px;
+              background-color: var(--color-secondary);
+              margin: 0.5rem auto 1rem;
+              border-radius: 999px;
+            "
+          ></div>
+          <p class="text-muted fs-6">
+            <em
+              >"Linh hoạt về tiến độ – Tối ưu về chi phí – Chuẩn mực về chất
+              lượng"</em
+            ><br />
+            Cơ Điện Bình An chia sẻ gánh nặng áp lực tiến độ và bài toán tài
+            chính cùng Quý chủ đầu tư & Nhà thầu.
+          </p>
+        </div>
 
-  <!-- Client Script -->
-  <script src="js/main.js"></script>
-</body>
+        <!-- 3 Vertical Image Cards (Staggered Layout) -->
+        <div class="row g-4 align-items-stretch pt-2">
+          <!-- Service Card 1: Bóc tách khối lượng -->
+          <div class="col-12 col-md-4">
+            <div class="service-card p-4 h-100">
+              <!-- Ảnh nền thực tế: Bản vẽ CAD & Dự toán -->
+              <img
+                src="assets/images/service-1-boc-tach-cad.jpg"
+                alt="Bản vẽ CAD bốc tách khối lượng điện nước M&E Cơ Điện Bình An"
+                class="service-bg-img"
+                loading="lazy"
+              />
+              <div class="service-gradient-overlay"></div>
+
+              <!-- Badge góc trên -->
+              <div class="position-absolute top-0 start-0 m-3 z-2">
+                <span
+                  class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 shadow-sm"
+                  style="font-size: 0.7rem"
+                >
+                  <i class="fa-solid fa-bolt me-1"></i> Miễn phí 100%
+                </span>
+              </div>
+
+              <div class="position-relative z-1 text-start mt-auto">
+                <div
+                  class="d-flex align-items-center justify-content-between mb-2"
+                >
+                  <div class="service-num-badge">01</div>
+                  <span
+                    class="badge rounded-pill bg-white text-dark small fw-semibold px-2 py-1"
+                    style="font-size: 0.7rem"
+                  >
+                    <i class="fa-regular fa-clock text-danger me-1"></i> Hỗ trợ
+                    24H
+                  </span>
+                </div>
+                <h3 class="h5 fw-bold text-white mb-2">
+                  Bốc Tách Khối Lượng Miễn Phí 100%
+                </h3>
+                <p class="text-light opacity-90 small mb-3">
+                  Chỉ cần gửi bản vẽ CAD, đội ngũ kỹ sư Bình An hỗ trợ bốc tách
+                  khối lượng hệ thống điện chính xác trong <strong>24h</strong>,
+                  giúp anh em nhà thầu tối ưu tối đa nhân lực dự toán.
+                </p>
+                <div
+                  class="pt-2 border-top border-white-50 d-flex align-items-center justify-content-between"
+                >
+                  <a
+                    href="https://zalo.me/0896555656"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn-dual-action text-decoration-none"
+                  >
+                    <span class="action-text"
+                      ><i class="fa-solid fa-paper-plane me-1"></i> Gửi CAD qua
+                      Zalo</span
+                    >
+                    <span class="action-icon"
+                      ><i class="fa-solid fa-arrow-right"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2 (Featured Card Elevated): Cung cấp vật tư chính hãng -->
+          <div class="col-12 col-md-4">
+            <div class="service-card card-featured p-4 h-100">
+              <!-- Ảnh nền thực tế: Cuộn cáp trung thế Cadivi công trình -->
+              <img
+                src="assets/images/service-2-cap-cadivi.jpg"
+                alt="Phân phối cuộn cáp điện lực Cadivi chính hãng tận chân công trình"
+                class="service-bg-img"
+                loading="lazy"
+                style="object-position: center top"
+              />
+              <div
+                class="service-gradient-overlay"
+                style="
+                  background: linear-gradient(
+                    to top,
+                    rgba(10, 25, 47, 0.96) 0%,
+                    rgba(11, 60, 140, 0.82) 50%,
+                    rgba(0, 0, 0, 0.25) 100%
+                  );
+                "
+              ></div>
+
+              <!-- Badge góc trên -->
+              <div class="position-absolute top-0 end-0 m-3 z-2">
+                <span
+                  class="badge bg-danger text-uppercase fw-bold px-3 py-1 shadow-sm"
+                  style="
+                    font-size: 0.72rem;
+                    background-color: var(--color-secondary) !important;
+                  "
+                >
+                  <i class="fa-solid fa-star me-1"></i> Chiết khấu tối đa
+                </span>
+              </div>
+
+              <div class="position-relative z-1 text-start mt-auto">
+                <div
+                  class="d-flex align-items-center justify-content-between mb-2"
+                >
+                  <div class="service-num-badge">02</div>
+                  <span
+                    class="badge rounded-pill bg-warning text-dark small fw-bold px-2 py-1"
+                    style="font-size: 0.7rem"
+                  >
+                    Đầy đủ CO/CQ
+                  </span>
+                </div>
+                <h3 class="h4 fw-bold text-white mb-2">
+                  Cung Cấp Vật Tư Chính Hãng – Giá Gốc
+                </h3>
+                <p class="text-light opacity-90 small mb-3">
+                  Phân phối trực tiếp các thương hiệu đầu ngành:
+                  <strong
+                    >Cadivi, Panasonic, Sino, thiết bị Solar SUNTEK...</strong
+                  >
+                  Chiết khấu cạnh tranh nhất, giao hàng tận chân công trình.
+                </p>
+                <div
+                  class="pt-2 border-top border-white-50 d-flex align-items-center justify-content-between"
+                >
+                  <a
+                    href="#san-pham"
+                    class="btn-dual-action text-decoration-none"
+                  >
+                    <span class="action-text"
+                      ><i class="fa-solid fa-list-check me-1"></i> Nhận Báo Giá
+                      RFQ</span
+                    >
+                    <span class="action-icon"
+                      ><i class="fa-solid fa-arrow-right"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3: Thu mua lại vật tư thừa -->
+          <div class="col-12 col-md-4">
+            <div class="service-card p-4 h-100">
+              <!-- Ảnh nền thực tế: Thu gom tập kết ống, thiết bị vật tư tồn đọng -->
+              <img
+                src="assets/images/service-3-thu-mua-ton-kho.jpg"
+                alt="Thu mua và điều phối vật tư, ống điện nước thừa tại bãi công trình"
+                class="service-bg-img"
+                loading="lazy"
+                style="object-position: center center"
+              />
+              <div
+                class="service-gradient-overlay"
+                style="
+                  background: linear-gradient(
+                    to top,
+                    rgba(10, 25, 47, 0.96) 0%,
+                    rgba(15, 30, 60, 0.8) 50%,
+                    rgba(0, 0, 0, 0.25) 100%
+                  );
+                "
+              ></div>
+
+              <!-- Badge góc trên -->
+              <div class="position-absolute top-0 start-0 m-3 z-2">
+                <span
+                  class="badge bg-success text-uppercase fw-bold px-2 py-1 shadow-sm"
+                  style="font-size: 0.7rem"
+                >
+                  <i class="fa-solid fa-recycle me-1"></i> Đặc quyền duy nhất
+                </span>
+              </div>
+
+              <div class="position-relative z-1 text-start mt-auto">
+                <div
+                  class="d-flex align-items-center justify-content-between mb-2"
+                >
+                  <div class="service-num-badge">03</div>
+                  <span
+                    class="badge rounded-pill bg-white text-dark small fw-semibold px-2 py-1"
+                    style="font-size: 0.7rem"
+                  >
+                    Tối ưu dòng vốn
+                  </span>
+                </div>
+                <h3 class="h5 fw-bold text-white mb-2">
+                  ĐẶC BIỆT: Thu Mua Lại Vật Tư Thừa
+                </h3>
+                <p class="text-light opacity-90 small mb-3">
+                  Sau nghiệm thu, Bình An hỗ trợ
+                  <strong>thu mua lại toàn bộ vật tư dư thừa</strong> (chưa hoặc
+                  đã qua sử dụng, còn nguyên vẹn), giải quyết triệt để bài toán
+                  tồn kho và đọng vốn.
+                </p>
+                <div
+                  class="pt-2 border-top border-white-50 d-flex align-items-center justify-content-between"
+                >
+                  <a
+                    href="tel:0941283024"
+                    class="btn-dual-action text-decoration-none"
+                  >
+                    <span class="action-text"
+                      ><i class="fa-solid fa-phone me-1"></i> Liên hệ Thu
+                      Mua</span
+                    >
+                    <span class="action-icon"
+                      ><i class="fa-solid fa-arrow-right"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Danh Mục Sản Phẩm (Products) Section -->
+    <!-- =========================================================================
+     5. SECTION DANH MỤC SẢN PHẨM (PRODUCTS)
+     ========================================================================= -->
+    <section id="san-pham" class="section-products">
+      <div class="custom-container">
+        <!-- Section Title Header -->
+        <div class="text-center mx-auto mb-4" style="max-width: 650px">
+          <div
+            class="d-inline-block px-3 py-1 rounded-pill bg-white border border-secondary-subtle small fw-bold text-primary-blue text-uppercase mb-2 shadow-sm"
+            style="font-size: 0.72rem"
+          >
+            DANH MỤC SẢN PHẨM
+          </div>
+          <h2 class="h3 fw-bold text-primary-blue text-uppercase mb-2">
+            VẬT TƯ CƠ ĐIỆN CHÍNH HÃNG
+          </h2>
+          <!-- Double Red Accent Underline -->
+          <div class="d-flex flex-column align-items-center gap-1 mb-3">
+            <div
+              style="
+                width: 80px;
+                height: 3px;
+                background-color: var(--color-secondary);
+                border-radius: 99px;
+              "
+            ></div>
+            <div
+              style="
+                width: 48px;
+                height: 2px;
+                background-color: var(--color-secondary);
+                border-radius: 99px;
+              "
+            ></div>
+          </div>
+          <p class="text-muted small">
+            Phân phối trực tiếp các thương hiệu hàng đầu, đầy đủ CO/CQ, chiết
+            khấu cạnh tranh, giao hàng tận chân công trình.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div
+          class="d-flex flex-wrap justify-content-center gap-2 mb-4"
+          role="tablist"
+        >
+          <button class="product-tab-btn active" data-filter="all">
+            Tất Cả
+          </button>
+          <button class="product-tab-btn" data-filter="cadivi">
+            Cáp điện Cadivi
+          </button>
+          <button class="product-tab-btn" data-filter="panasonic">
+            Thiết bị điện Panasonic
+          </button>
+          <button class="product-tab-btn" data-filter="sino">
+            Thiết bị điện Sino
+          </button>
+          <button class="product-tab-btn" data-filter="suntek">
+            Thiết bị Solar SUNTEK
+          </button>
+        </div>
+
+        <!-- Product Grid (4 cards/row, 8 cards total) -->
+        <div class="row g-3 mb-5" id="productGrid">
+          <!-- Product 1: Cadivi Rulo Cáp Điện Lực -->
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col"
+            data-category="cadivi"
+          >
+            <article class="product-card h-100">
+              <div>
+                <div class="product-img-box">
+                  <img
+                    src="assets/images/prod-cadivi-rulo.jpg"
+                    alt="Rulo Cáp ngầm trung thế Cadivi chính hãng"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="h6 fw-bold text-dark mb-1 leading-snug">
+                  Cáp điện lực Cadivi CXV/SE/DSTA 24kV
+                </h3>
+                <p class="text-muted small line-clamp-2 mb-3">
+                  Ruột đồng dẫn điện cao cấp, cách điện XLPE, giáp băng kim loại
+                  chịu lực.
+                </p>
+              </div>
+              <div
+                class="pt-2 border-top d-flex align-items-center justify-content-between"
+              >
+                <span class="product-price-tag text-muted fw-semibold"
+                  >Giá:</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="text-brand-red text-decoration-none small fw-bold"
+                  >Liên hệ <i class="fa-solid fa-angle-right small"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product 2: Cadivi Cuộn Cáp Đôi & Đơn -->
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col"
+            data-category="cadivi"
+          >
+            <article class="product-card h-100">
+              <div>
+                <div class="product-img-box">
+                  <img
+                    src="assets/images/prod-cadivi-cuon.jpg"
+                    alt="Dây cáp điện lực hạ thế Cadivi cuộn chính hãng"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="h6 fw-bold text-dark mb-1 leading-snug">
+                  Dây cáp điện hạ thế Cadivi CV / VCm
+                </h3>
+                <p class="text-muted small line-clamp-2 mb-3">
+                  Ruột đồng nguyên chất, vỏ bọc PVC chống cháy lan, đủ kích cỡ
+                  1.5 - 50mm².
+                </p>
+              </div>
+              <div
+                class="pt-2 border-top d-flex align-items-center justify-content-between"
+              >
+                <span class="product-price-tag text-muted fw-semibold"
+                  >Giá:</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="text-brand-red text-decoration-none small fw-bold"
+                  >Liên hệ <i class="fa-solid fa-angle-right small"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product 3: Aptomat MCB Panasonic -->
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col"
+            data-category="panasonic"
+          >
+            <article class="product-card h-100">
+              <div>
+                <div class="product-img-box">
+                  <img
+                    src="assets/images/prod-panasonic-mcb.jpg"
+                    alt="Aptomat MCB Panasonic 2P 32A chính hãng"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="h6 fw-bold text-dark mb-1 leading-snug">
+                  Aptomat MCB Panasonic 2P 32A 6kA
+                </h3>
+                <p class="text-muted small line-clamp-2 mb-3">
+                  Bảo vệ quá tải và ngắn mạch tiêu chuẩn Nhật Bản, độ bền cơ
+                  điện vượt trội.
+                </p>
+              </div>
+              <div
+                class="pt-2 border-top d-flex align-items-center justify-content-between"
+              >
+                <span class="product-price-tag text-muted fw-semibold"
+                  >Giá:</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="text-brand-red text-decoration-none small fw-bold"
+                  >Liên hệ <i class="fa-solid fa-angle-right small"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product 4: Công tắc ổ cắm Panasonic -->
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col"
+            data-category="panasonic"
+          >
+            <article class="product-card h-100">
+              <div>
+                <div class="product-img-box">
+                  <img
+                    src="assets/images/prod-panasonic-congtac.jpg"
+                    alt="Mặt hạt công tắc ổ cắm Panasonic cao cấp"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="h6 fw-bold text-dark mb-1 leading-snug">
+                  Công tắc & Ổ cắm Panasonic dòng Wide
+                </h3>
+                <p class="text-muted small line-clamp-2 mb-3">
+                  Mặt hạt phím lớn hiện đại, tiếp điểm đồng nguyên chất, cắm êm
+                  ái chống giật.
+                </p>
+              </div>
+              <div
+                class="pt-2 border-top d-flex align-items-center justify-content-between"
+              >
+                <span class="product-price-tag text-muted fw-semibold"
+                  >Giá:</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="text-brand-red text-decoration-none small fw-bold"
+                  >Liên hệ <i class="fa-solid fa-angle-right small"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product 5: Ống luồn PVC Sino -->
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col"
+            data-category="sino"
+          >
+            <article class="product-card h-100">
+              <div>
+                <div class="product-img-box">
+                  <img
+                    src="assets/images/prod-ong-luon-sino.jpg"
+                    alt="Ống luồn dây điện chống cháy Sino Vanlock"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="h6 fw-bold text-dark mb-1 leading-snug">
+                  Ống luồn dây điện Sino PVC chống dập
+                </h3>
+                <p class="text-muted small line-clamp-2 mb-3">
+                  Độ bền nén cao, uốn lạnh linh hoạt, chuyên dụng đổ sàn bê tông
+                  công trình.
+                </p>
+              </div>
+              <div
+                class="pt-2 border-top d-flex align-items-center justify-content-between"
+              >
+                <span class="product-price-tag text-muted fw-semibold"
+                  >Giá:</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="text-brand-red text-decoration-none small fw-bold"
+                  >Liên hệ <i class="fa-solid fa-angle-right small"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product 6: Phụ kiện ống nhựa M&E Sino -->
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col"
+            data-category="sino"
+          >
+            <article class="product-card h-100">
+              <div>
+                <div class="product-img-box">
+                  <img
+                    src="assets/images/prod-ong-nhua-phukien.jpg"
+                    alt="Ống luồn và phụ kiện hộp nối cút chia Sino"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="h6 fw-bold text-dark mb-1 leading-snug">
+                  Ống & Phụ kiện nối luồn cáp công trình
+                </h3>
+                <p class="text-muted small line-clamp-2 mb-3">
+                  Hộp chia ngả, cút nối ren, đầu kẹp đồng bộ tiêu chuẩn thi công
+                  cơ điện M&E.
+                </p>
+              </div>
+              <div
+                class="pt-2 border-top d-flex align-items-center justify-content-between"
+              >
+                <span class="product-price-tag text-muted fw-semibold"
+                  >Giá:</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="text-brand-red text-decoration-none small fw-bold"
+                  >Liên hệ <i class="fa-solid fa-angle-right small"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product 7: SUNTEK Tấm Pin -->
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col"
+            data-category="suntek"
+          >
+            <article class="product-card h-100">
+              <div>
+                <div class="product-img-box">
+                  <img
+                    src="assets/images/prod-suntek-solar.jpg"
+                    alt="Tấm pin năng lượng mặt trời SUNTEK Mono Half-cell"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="h6 fw-bold text-dark mb-1 leading-snug">
+                  Tấm pin năng lượng mặt trời SUNTEK 550W
+                </h3>
+                <p class="text-muted small line-clamp-2 mb-3">
+                  Công nghệ Mono Half-cell hiệu suất 21.3%, khung nhôm anode bền
+                  vững thời tiết.
+                </p>
+              </div>
+              <div
+                class="pt-2 border-top d-flex align-items-center justify-content-between"
+              >
+                <span class="product-price-tag text-muted fw-semibold"
+                  >Giá:</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="text-brand-red text-decoration-none small fw-bold"
+                  >Liên hệ <i class="fa-solid fa-angle-right small"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product 8: SUNTEK Inverter & Phụ Kiện Solar -->
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 product-item-col"
+            data-category="suntek"
+          >
+            <article class="product-card h-100">
+              <div>
+                <div class="product-img-box">
+                  <img
+                    src="assets/images/prod-suntek-solar.jpg"
+                    alt="Biến tần hòa lưới Inverter Solar SUNTEK"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="h6 fw-bold text-dark mb-1 leading-snug">
+                  Bộ thiết bị Solar & Inverter SUNTEK
+                </h3>
+                <p class="text-muted small line-clamp-2 mb-3">
+                  Biến tần hòa lưới thông minh, quản lý qua App, phụ kiện lắp
+                  đặt trọn gói.
+                </p>
+              </div>
+              <div
+                class="pt-2 border-top d-flex align-items-center justify-content-between"
+              >
+                <span class="product-price-tag text-muted fw-semibold"
+                  >Giá:</span
+                >
+                <a
+                  href="tel:0896555656"
+                  class="text-brand-red text-decoration-none small fw-bold"
+                  >Liên hệ <i class="fa-solid fa-angle-right small"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Outlined Blue CTA Button -->
+        <div class="text-center">
+          <a
+            href="#"
+            class="btn btn-outline-primary px-4 py-2 text-uppercase fw-bold small rounded-3"
+            style="
+              color: var(--color-primary);
+              border-color: var(--color-primary);
+            "
+          >
+            Xem tất cả sản phẩm <i class="fa-solid fa-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Tin Tức (News) Section -->
+    <!-- =========================================================================
+     6. SECTION TIN TỨC (NEWS & ARTICLES)
+     ========================================================================= -->
+    <section id="tin-tuc" class="section-news">
+      <div class="custom-container">
+        <!-- Section Title Header -->
+        <div class="text-center mx-auto mb-5" style="max-width: 600px">
+          <h2 class="display-6 fw-bold text-primary-blue mb-0">Tin tức</h2>
+          <div
+            style="
+              width: 50px;
+              height: 3.5px;
+              background-color: var(--color-secondary);
+              margin: 0.75rem auto 0;
+              border-radius: 99px;
+            "
+          ></div>
+        </div>
+
+        <!-- News Carousel Wrapper -->
+        <div class="position-relative px-md-4">
+          <!-- Prev Button -->
+          <button
+            id="newsPrevBtn"
+            type="button"
+            class="btn btn-light rounded-circle shadow-sm border position-absolute top-50 start-0 translate-middle-y z-2 d-none d-md-flex align-items-center justify-content-center"
+            style="width: 44px; height: 44px"
+            aria-label="Tin trước"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <!-- 3 News Cards Row -->
+          <div class="row g-4" id="newsContainer">
+            <!-- News Card 1 -->
+            <div class="col-12 col-md-4">
+              <article class="news-card h-100">
+                <div>
+                  <div
+                    class="wireframe-img position-relative"
+                    style="height: 190px"
+                  >
+                    <span class="news-badge">Kỹ thuật M&E</span>
+                    <i
+                      class="fa-regular fa-image display-6 text-muted mb-1"
+                    ></i>
+                    <span style="font-size: 0.7rem"
+                      >[ Ảnh minh họa tin tức ]</span
+                    >
+                  </div>
+                  <div class="p-4">
+                    <h3 class="h6 fw-bold text-dark line-clamp-2 mb-2">
+                      Kinh nghiệm bốc tách khối lượng hệ thống điện công trình
+                      giảm thiểu sai số
+                    </h3>
+                    <p class="text-muted small line-clamp-3 mb-0">
+                      Tổng hợp các bước rà soát bản vẽ thiết kế, kiểm tra sự
+                      đồng bộ giữa mặt bằng và sơ đồ nguyên lý giúp nhà thầu hạn
+                      chế phát sinh chi phí…
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="p-4 pt-0 d-flex align-items-center justify-content-between border-top mt-2"
+                >
+                  <a
+                    href="#"
+                    class="text-brand-red text-uppercase fw-bold small text-decoration-none"
+                    >ĐỌC TIẾP →</a
+                  >
+                  <span class="text-muted" style="font-size: 0.75rem"
+                    ><i class="fa-regular fa-calendar me-1"></i> 30/9/2026</span
+                  >
+                </div>
+              </article>
+            </div>
+
+            <!-- News Card 2 -->
+            <div class="col-12 col-md-4">
+              <article class="news-card h-100">
+                <div>
+                  <div
+                    class="wireframe-img position-relative"
+                    style="height: 190px"
+                  >
+                    <span class="news-badge">Vật tư thiết bị</span>
+                    <i
+                      class="fa-regular fa-image display-6 text-muted mb-1"
+                    ></i>
+                    <span style="font-size: 0.7rem"
+                      >[ Ảnh minh họa tin tức ]</span
+                    >
+                  </div>
+                  <div class="p-4">
+                    <h3 class="h6 fw-bold text-dark line-clamp-2 mb-2">
+                      Cập nhật bảng giá cáp điện Cadivi và chính sách chiết khấu
+                      nhà thầu mới nhất
+                    </h3>
+                    <p class="text-muted small line-clamp-3 mb-0">
+                      Cơ Điện Bình An gửi tới Quý khách hàng biểu giá chiết khấu
+                      mới nhất kèm giấy chứng nhận chất lượng CO/CQ và tiến độ
+                      bàn giao nhanh chóng…
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="p-4 pt-0 d-flex align-items-center justify-content-between border-top mt-2"
+                >
+                  <a
+                    href="#"
+                    class="text-brand-red text-uppercase fw-bold small text-decoration-none"
+                    >ĐỌC TIẾP →</a
+                  >
+                  <span class="text-muted" style="font-size: 0.75rem"
+                    ><i class="fa-regular fa-calendar me-1"></i> 28/9/2026</span
+                  >
+                </div>
+              </article>
+            </div>
+
+            <!-- News Card 3 -->
+            <div class="col-12 col-md-4">
+              <article class="news-card h-100">
+                <div>
+                  <div
+                    class="wireframe-img position-relative"
+                    style="height: 190px"
+                  >
+                    <span class="news-badge">Chính sách đối tác</span>
+                    <i
+                      class="fa-regular fa-image display-6 text-muted mb-1"
+                    ></i>
+                    <span style="font-size: 0.7rem"
+                      >[ Ảnh minh họa tin tức ]</span
+                    >
+                  </div>
+                  <div class="p-4">
+                    <h3 class="h6 fw-bold text-dark line-clamp-2 mb-2">
+                      Giải pháp thu hồi vật tư tồn kho sau quyết toán công trình
+                      xây dựng
+                    </h3>
+                    <p class="text-muted small line-clamp-3 mb-0">
+                      Chia sẻ quy trình kiểm đếm, thẩm định và phương án thu mua
+                      lại dây cáp, thiết bị đóng cắt dư thừa giúp bảo toàn dòng
+                      tiền cho đơn vị thi công…
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="p-4 pt-0 d-flex align-items-center justify-content-between border-top mt-2"
+                >
+                  <a
+                    href="#"
+                    class="text-brand-red text-uppercase fw-bold small text-decoration-none"
+                    >ĐỌC TIẾP →</a
+                  >
+                  <span class="text-muted" style="font-size: 0.75rem"
+                    ><i class="fa-regular fa-calendar me-1"></i> 25/9/2026</span
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Next Button -->
+          <button
+            id="newsNextBtn"
+            type="button"
+            class="btn btn-light rounded-circle shadow-sm border position-absolute top-50 end-0 translate-middle-y z-2 d-none d-md-flex align-items-center justify-content-center"
+            style="width: 44px; height: 44px"
+            aria-label="Tin tiếp theo"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Thương Hiệu Vật Tư & Cam Kết (Brands & Commitments) Section -->
+    <!-- =========================================================================
+     7. SECTION THƯƠNG HIỆU VẬT TƯ & CAM KẾT (BRANDS & COMMITMENTS)
+     ========================================================================= -->
+    <section class="section-partners" id="thuong-hieu">
+      <div class="custom-container">
+        <!-- Section Title Header -->
+        <div class="text-center mx-auto mb-4" style="max-width: 720px">
+          <h2 class="display-6 fw-bold text-primary-blue mb-0">
+           Đối tác & Khách hàng
+          </h2>
+          <!-- Thin Red Underline Accent -->
+          <div
+            class="d-flex justify-content-center align-items-center gap-1 my-3"
+          >
+            <div
+              style="
+                width: 48px;
+                height: 3px;
+                background-color: var(--color-secondary);
+                border-radius: 2px;
+              "
+            ></div>
+          </div>
+          <p class="text-muted small">
+            Vật tư điện chính hãng, đầy đủ CO/CQ, chiết khấu cạnh tranh, giao
+            hàng tận công trình.
+          </p>
+        </div>
+
+        <!-- Row of 4 Text-Only Brand Cards -->
+        <div class="row g-3 justify-content-center">
+          <!-- Card 1: CADIVI -->
+          <div class="col-6 col-lg-3">
+            <div class="brand-text-card h-100">
+              <div class="brand-text-name">CADIVI</div>
+              <div class="brand-text-caption">Cáp điện</div>
+            </div>
+          </div>
+
+          <!-- Card 2: PANASONIC -->
+          <div class="col-6 col-lg-3">
+            <div class="brand-text-card h-100">
+              <div class="brand-text-name">PANASONIC</div>
+              <div class="brand-text-caption">Thiết bị điện</div>
+            </div>
+          </div>
+
+          <!-- Card 3: SINO -->
+          <div class="col-6 col-lg-3">
+            <div class="brand-text-card h-100">
+              <div class="brand-text-name">SINO</div>
+              <div class="brand-text-caption">Ống & phụ kiện điện</div>
+            </div>
+          </div>
+
+          <!-- Card 4: SUNTEK -->
+          <div class="col-6 col-lg-3">
+            <div class="brand-text-card h-100">
+              <div class="brand-text-name">SUNTEK</div>
+              <div class="brand-text-caption">Thiết bị Solar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Footer Section -->
+    <!-- =========================================================================
+     8. FOOTER (Company Info, Services Nav, Newsletter Signup, Copyright)
+     ========================================================================= -->
+    <footer id="lien-he" class="site-footer">
+      <div class="custom-container">
+        <div class="row g-4 mb-5">
+          <!-- Column 1: Company Profile -->
+          <div class="col-12 col-md-5">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img
+                src="assets/images/logo-binh-an.png"
+                alt="Logo Cơ Điện Bình An"
+                class="brand-logo-img-footer"
+              />
+              <div>
+                <span
+                  class="d-block text-secondary-subtle small fw-medium text-uppercase"
+                  style="font-size: 0.7rem"
+                  >CÔNG TY TNHH ĐẦU TƯ VÀ KỸ THUẬT</span
+                >
+                <span class="d-block fw-bold text-white fs-6"
+                  >CƠ ĐIỆN BÌNH AN</span
+                >
+              </div>
+            </div>
+
+            <p class="text-light opacity-75 small mb-3">
+              Đơn vị uy tín chuyên sâu về tư vấn giải pháp bốc tách khối lượng
+              M&E, phân phối vật tư cơ điện chính hãng và hỗ trợ thu hồi vật tư
+              công trình.
+            </p>
+
+            <address class="mb-0 text-light opacity-90 small fst-normal">
+              <div class="d-flex align-items-start gap-2 mb-2">
+                <i class="fa-solid fa-location-dot text-brand-red mt-1"></i>
+                <span>1148A Phạm Văn Đồng, P. Thủ Đức, Tp. Hồ Chí Minh</span>
+              </div>
+              <div class="d-flex align-items-start gap-2 mb-2">
+                <i class="fa-solid fa-phone text-gold mt-1"></i>
+                <div>
+                  <div>0896 55 56 56 (Ms. Hằng - Dự án)</div>
+                  <div>0941 283 024 (Mr. Thưởng - Khách lẻ / Thầu thợ)</div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-envelope text-gold"></i>
+                <a
+                  href="mailto:quangthuongqn@gmail.com"
+                  class="text-light text-decoration-underline"
+                  >quangthuongqn@gmail.com</a
+                >
+              </div>
+            </address>
+          </div>
+
+          <!-- Column 2: Quick Links / Featured Services -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <h3 class="h6 text-uppercase fw-bold text-white mb-2">
+              DỊCH VỤ NỔI BẬT
+            </h3>
+            <div
+              style="
+                width: 36px;
+                height: 2px;
+                background-color: var(--color-secondary);
+                margin-bottom: 1rem;
+              "
+            ></div>
+
+            <ul class="d-flex flex-column gap-2 small">
+              <li>
+                <a href="#dich-vu" class="footer-nav-link text-decoration-none">
+                  <span class="text-gold fw-bold">&gt;</span> Bốc tách khối
+                  lượng miễn phí
+                </a>
+              </li>
+              <li>
+                <a href="#dich-vu" class="footer-nav-link text-decoration-none">
+                  <span class="text-gold fw-bold">&gt;</span> Cung cấp vật tư
+                  chính hãng
+                </a>
+              </li>
+              <li>
+                <a href="#dich-vu" class="footer-nav-link text-decoration-none">
+                  <span class="text-gold fw-bold">&gt;</span> Thu mua lại vật tư
+                  thừa
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#san-pham"
+                  class="footer-nav-link text-decoration-none"
+                >
+                  <span class="text-gold fw-bold">&gt;</span> Danh mục sản phẩm
+                </a>
+              </li>
+              <li>
+                <a href="#tin-tuc" class="footer-nav-link text-decoration-none">
+                  <span class="text-gold fw-bold">&gt;</span> Tin tức & kiến
+                  thức
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Newsletter Form -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <h3 class="h6 text-uppercase fw-bold text-white mb-2">
+              ĐĂNG KÝ NHẬN TIN
+            </h3>
+            <div
+              style="
+                width: 36px;
+                height: 2px;
+                background-color: var(--color-secondary);
+                margin-bottom: 1rem;
+              "
+            ></div>
+            <p class="text-light opacity-75 small mb-3">
+              Nhận thông tin báo giá và chính sách chiết khấu mới nhất từ Cơ
+              Điện Bình An.
+            </p>
+
+            <form id="newsletterForm" class="d-flex flex-column gap-2">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Họ tên"
+                  class="footer-form-input"
+                  required
+                  aria-label="Họ tên"
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Số điện thoại"
+                  class="footer-form-input"
+                  required
+                  aria-label="Số điện thoại"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="footer-form-input"
+                  aria-label="Địa chỉ email"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-danger py-2 text-uppercase fw-bold small rounded-3 mt-1 shadow-sm d-flex align-items-center justify-content-center gap-1"
+                style="
+                  background-color: var(--color-secondary);
+                  border-color: var(--color-secondary);
+                "
+              >
+                ĐĂNG KÝ ↗
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Copyright Sub-footer -->
+        <div
+          class="pt-4 border-top border-secondary-subtle text-center small text-secondary"
+          style="border-color: rgba(255, 255, 255, 0.15) !important"
+        >
+          <p class="mb-0 text-light opacity-75" style="font-size: 0.8rem; letter-spacing: 0.02em;">
+            &copy; 2026 CTY TNHH ĐẦU TƯ & KỸ THUẬT CƠ ĐIỆN <strong class="text-white fw-bold">BÌNH AN</strong>. Design by <strong class="text-white fw-bold">SOTA</strong>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Client Script -->
+    <script src="js/main.js"></script>
+  </body>
 </html>
