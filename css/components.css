@@ -181,18 +181,28 @@
 }
 
 .main-nav-item.active .main-nav-link {
-  color: #ff9800 !important; /* Màu cam nổi bật giống SOLNOVA Hình 1 */
+  color: #ff3b30 !important; /* Màu đỏ nổi bật trên nền xanh */
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(255, 59, 48, 0.45);
 }
 
 .main-nav-item.active::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 0.25rem;
+  right: 0.25rem;
   height: 3.5px;
-  background-color: #ff9800; /* Gạch chân màu cam giống SOLNOVA Hình 1 */
+  background-color: #ff3b30; /* Gạch chân màu đỏ */
   border-radius: 3px 3px 0 0;
+  box-shadow: 0 -2px 8px rgba(255, 59, 48, 0.5);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Đảm bảo khi cuộn xuống các mục không bị che khuất bởi header sticky */
+section[id],
+footer[id] {
+  scroll-margin-top: 135px;
 }
 
 /* ==========================================================================
@@ -206,7 +216,7 @@
   z-index: 1030;
   background-color: #fff;
   border-bottom: 1px solid var(--color-slate-200);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   animation: headerSlideDown 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -220,27 +230,44 @@
 }
 
 .site-header.is-sticky .site-header-top {
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
 }
 
 .site-header.is-sticky .brand-logo-img {
-  height: 42px;
+  height: 38px;
 }
 
-/* Hình 2: Ẩn thanh navbar xanh dài khi cuộn */
+/* Thanh navbar xanh chính LUÔN HIỂN THỊ trên desktop khi cuộn để người dùng nhìn thấy các mục và đánh dấu đỏ */
 .site-header.is-sticky .main-navbar {
-  display: none !important;
+  display: block !important;
 }
 
-/* Hình 2: Ẩn hotline desktop khi cuộn */
-.site-header.is-sticky .header-hotline-wrap {
-  display: none !important;
+.site-header.is-sticky .main-nav-link {
+  padding: 0.65rem 0.35rem;
 }
 
-/* Hình 2: Hiện nút Hamburger tròn xanh ở góc phải */
-.site-header.is-sticky .btn-header-toggle {
-  display: inline-flex !important;
+/* Trên desktop (min-width: 992px): ẩn nút hamburger, giữ hotline và navbar đầy đủ */
+@media (min-width: 992px) {
+  .site-header .btn-header-toggle,
+  .site-header.is-sticky .btn-header-toggle {
+    display: none !important;
+  }
+  .site-header.is-sticky .header-hotline-wrap {
+    display: flex !important;
+  }
+}
+
+/* Trên mobile/tablet (< 992px): ẩn navbar ngang, hiện nút toggle tròn xanh */
+@media (max-width: 991.98px) {
+  .site-header .main-navbar,
+  .site-header.is-sticky .main-navbar {
+    display: none !important;
+  }
+  .site-header .btn-header-toggle,
+  .site-header.is-sticky .btn-header-toggle {
+    display: inline-flex !important;
+  }
 }
 
 /* ==========================================================================
@@ -357,7 +384,11 @@
 }
 
 .drawer-nav-item.active .drawer-nav-link {
-  color: #ff9800 !important; /* Màu cam nổi bật giống SOLNOVA Hình 3 */
+  color: #B3141B !important; /* Đánh dấu màu đỏ nổi bật */
+  font-weight: 700;
+  border-left: 4px solid #B3141B;
+  background-color: rgba(179, 20, 27, 0.06);
+  padding-left: 0.65rem;
 }
 
 /* ==========================================================================

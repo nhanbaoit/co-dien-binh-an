@@ -63,7 +63,7 @@
     <div class="custom-container">
       <ul class="main-nav-list mb-0">
         <li class="main-nav-item active position-relative">
-          <a href="#" class="main-nav-link">
+          <a href="#trang-chu" class="main-nav-link">
             TRANG CHỦ
           </a>
         </li>
@@ -122,7 +122,7 @@
     <div class="drawer-body">
       <ul class="drawer-nav-list list-unstyled mb-4">
         <li class="drawer-nav-item active">
-          <a href="#" class="drawer-nav-link">TRANG CHỦ</a>
+          <a href="#trang-chu" class="drawer-nav-link">TRANG CHỦ</a>
         </li>
         <li class="drawer-nav-item">
           <a href="#gioi-thieu" class="drawer-nav-link">GIỚI THIỆU</a>

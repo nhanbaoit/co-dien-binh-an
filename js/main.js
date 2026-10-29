@@ -9,6 +9,7 @@ function initAllComponents() {
   initNewsNavigation();
   initNewsletterForm();
   initSmoothScroll();
+  initScrollSpy();
   initBackToTop();
 }
 
@@ -183,7 +184,7 @@ function initNewsletterForm() {
 }
 
 /**
- * Smooth scrolling for anchor links
+ * Smooth scrolling for anchor links with sticky header offset
  */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -193,13 +194,93 @@ function initSmoothScroll() {
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        targetEl.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
+        const header = document.getElementById('siteHeader');
+        const headerHeight = header ? (header.offsetHeight || 110) : 110;
+        const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - (headerHeight - 15);
+        window.scrollTo({
+          top: Math.max(0, targetPos),
+          behavior: 'smooth'
         });
       }
     });
   });
+}
+
+/**
+ * Scrollspy: Tự động đánh dấu màu đỏ mục menu tương ứng khi lướt qua các section
+ */
+function initScrollSpy() {
+  const sectionIds = ['trang-chu', 'gioi-thieu', 'dich-vu', 'san-pham', 'tin-tuc', 'lien-he'];
+  const sections = sectionIds.map(id => ({
+    id: id,
+    el: document.getElementById(id)
+  })).filter(s => s.el !== null);
+
+  const mainItems = document.querySelectorAll('.main-nav-item');
+  const drawerItems = document.querySelectorAll('.drawer-nav-item');
+
+  function updateActive(activeId) {
+    mainItems.forEach(item => {
+      const a = item.querySelector('a');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (href === '#' + activeId || (activeId === 'trang-chu' && (href === '#' || href === '#trang-chu'))) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+
+    drawerItems.forEach(item => {
+      const a = item.querySelector('a');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (href === '#' + activeId || (activeId === 'trang-chu' && (href === '#' || href === '#trang-chu'))) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+
+  let ticking = false;
+  function checkScrollPosition() {
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+
+    // Khi cuộn xuống sát đáy trang -> Đánh dấu Liên hệ
+    if (scrollPos + windowHeight >= docHeight - 80) {
+      updateActive('lien-he');
+      ticking = false;
+      return;
+    }
+
+    const header = document.getElementById('siteHeader');
+    const headerOffset = header ? (header.offsetHeight + 40) : 150;
+
+    let current = sections[0]?.id || 'trang-chu';
+    for (let i = 0; i < sections.length; i++) {
+      const sec = sections[i];
+      const top = sec.el.getBoundingClientRect().top + scrollPos - headerOffset;
+      if (scrollPos >= top) {
+        current = sec.id;
+      }
+    }
+
+    updateActive(current);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(checkScrollPosition);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Kiểm tra vị trí ngay khi trang load
+  checkScrollPosition();
 }
 
 /**

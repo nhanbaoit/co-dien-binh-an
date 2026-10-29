@@ -5,7 +5,7 @@
 <!-- =========================================================================
      2. HERO SLIDER SECTION (3 Sliders: Bốc Tách CAD, Giao Hàng & Đồng Hành)
      ========================================================================= -->
-<section class="hero-slider-section" aria-label="Banner giới thiệu nổi bật">
+<section id="trang-chu" class="hero-slider-section" aria-label="Banner giới thiệu nổi bật">
   <div class="hero-slider-container">
     
     <!-- Slide 1: Bốc tách khối lượng CAD -->
