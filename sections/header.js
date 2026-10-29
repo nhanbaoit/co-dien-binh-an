@@ -67,19 +67,19 @@
             TRANG CHỦ
           </a>
         </li>
-        <li class="main-nav-item">
+        <li class="main-nav-item position-relative">
           <a href="#gioi-thieu" class="main-nav-link">GIỚI THIỆU</a>
         </li>
-        <li class="main-nav-item">
+        <li class="main-nav-item position-relative">
           <a href="#dich-vu" class="main-nav-link">DỊCH VỤ NỔI BẬT</a>
         </li>
-        <li class="main-nav-item">
+        <li class="main-nav-item position-relative">
           <a href="#san-pham" class="main-nav-link">DANH MỤC SẢN PHẨM</a>
         </li>
-        <li class="main-nav-item">
+        <li class="main-nav-item position-relative">
           <a href="#tin-tuc" class="main-nav-link">TIN TỨC</a>
         </li>
-        <li class="main-nav-item">
+        <li class="main-nav-item position-relative">
           <a href="#lien-he" class="main-nav-link">LIÊN HỆ</a>
         </li>
       </ul>

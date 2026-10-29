@@ -300,14 +300,13 @@ function initHeaderScrollAndDrawer() {
 
   function updateSticky() {
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    // Khi cuộn qua 70px: chuyển sang dạng sticky compact header (Hình 2)
-    if (scrollY > 70) {
-      if (!header.classList.contains('is-sticky')) {
-        header.classList.add('is-sticky');
+    if (scrollY > 20) {
+      if (!header.classList.contains('is-scrolled')) {
+        header.classList.add('is-scrolled');
       }
     } else {
-      if (header.classList.contains('is-sticky')) {
-        header.classList.remove('is-sticky');
+      if (header.classList.contains('is-scrolled')) {
+        header.classList.remove('is-scrolled');
       }
     }
     ticking = false;
