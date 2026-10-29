@@ -44,7 +44,7 @@
               <i class="fa-solid fa-phone"></i>
             </div>
             <div class="text-md-end">
-              <span class="d-block hotline-label">Hotline dự án (Ms. Hằng)</span>
+              <span class="d-block hotline-label">Hotline</span>
               <a href="tel:0896555656" class="hotline-number text-decoration-none">0896 55 56 56</a>
             </div>
           </div>
@@ -143,9 +143,9 @@
 
       <!-- Quick Hotline Card in Drawer -->
       <div class="p-3 rounded-3 text-start" style="background-color: var(--color-slate-100); border: 1px dashed var(--color-slate-300);">
-        <span class="d-block text-muted small mb-1" style="font-size: 0.8rem;">Hotline tư vấn dự án 24/7:</span>
+        <span class="d-block text-muted small mb-1" style="font-size: 0.8rem;">Hotline tư vấn 24/7:</span>
         <a href="tel:0896555656" class="fw-bold text-danger d-inline-flex align-items-center gap-2 text-decoration-none" style="font-size: 1rem;">
-          <i class="fa-solid fa-phone"></i> 0896 55 56 56 (Ms. Hằng)
+          <i class="fa-solid fa-phone"></i> 0896 55 56 56
         </a>
       </div>
     </div>
