@@ -27,9 +27,9 @@
 
         <!-- Center: Branding Logo (Hình 1 & 2) -->
         <div class="col-8 col-md-4 text-start text-md-center order-1 order-md-2 header-logo-col">
-          <a href="#" class="d-inline-flex align-items-center justify-content-md-center gap-2 gap-md-3 text-decoration-none">
+          <a href="#trang-chu" class="d-inline-flex align-items-center justify-content-md-center gap-2 gap-md-3 text-decoration-none">
             <img src="assets/images/logo-binh-an.png" alt="Logo Cơ Điện Bình An" class="brand-logo-img">
-            <div class="text-start">
+            <div class="text-center">
               <span class="d-block brand-company-sub">Công ty TNHH Đầu tư & Kỹ thuật</span>
               <span class="d-block brand-company-name">CƠ ĐIỆN BÌNH AN</span>
             </div>
