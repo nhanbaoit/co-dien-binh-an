@@ -3,21 +3,35 @@
  */
 
 function initAllComponents() {
+  initHeaderScrollAndDrawer();
   initHeroSlider();
   initProductFilter();
   initNewsNavigation();
   initNewsletterForm();
   initSmoothScroll();
+  initBackToTop();
+}
+
+let initialized = false;
+function safeInit() {
+  if (initialized) return;
+  if (document.querySelector('.hero-slide-item')) {
+    initialized = true;
+    initAllComponents();
+  }
 }
 
 // Support both dynamically loaded sections and standard DOMContentLoaded
-document.addEventListener('sectionsLoaded', initAllComponents);
-document.addEventListener('DOMContentLoaded', function () {
-  // If sections are already embedded in the DOM (e.g. fallback or static build), initialize immediately
-  if (document.querySelector('.hero-slide-item')) {
-    initAllComponents();
-  }
+document.addEventListener('sectionsLoaded', function() {
+  initialized = true;
+  initAllComponents();
 });
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', safeInit);
+} else {
+  safeInit();
+}
 
 /**
  * Hero Slider Controller (Auto-play, Dots, Prev/Next)
@@ -138,7 +152,7 @@ function initNewsNavigation() {
 }
 
 /**
- * Handle subscription form submission
+ * Handle subscription form submission with Bootstrap Success Modal
  */
 function initNewsletterForm() {
   const form = document.getElementById('newsletterForm');
@@ -146,16 +160,24 @@ function initNewsletterForm() {
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    const name = form.querySelector('input[type="text"]').value;
-    const phone = form.querySelector('input[type="tel"]').value;
-    const email = form.querySelector('input[type="email"]').value;
+    const nameInput = form.querySelector('input[type="text"]');
+    const name = nameInput ? nameInput.value.trim() : '';
 
-    if (!name || !phone) {
-      alert('Vui lòng nhập đầy đủ Họ tên và Số điện thoại!');
-      return;
+    // Cập nhật tên khách hàng vào modal nếu có
+    const nameDisplay = document.getElementById('successCustomerName');
+    if (nameDisplay) {
+      nameDisplay.textContent = name ? ` ${name}` : '';
     }
 
-    alert(`Cảm ơn Quý khách ${name}! Cơ Điện Bình An đã tiếp nhận thông tin và sẽ liên hệ sớm nhất.`);
+    // Hiển thị Bootstrap Modal Popup thông báo thành công
+    const modalEl = document.getElementById('newsletterSuccessModal');
+    if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+      const successModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      successModal.show();
+    } else {
+      alert(`Đăng ký thành công! Cảm ơn Quý khách ${name} đã quan tâm.`);
+    }
+
     form.reset();
   });
 }
@@ -176,6 +198,134 @@ function initSmoothScroll() {
           block: 'start',
         });
       }
+    });
+  });
+}
+
+/**
+ * Header Scroll & Sticky Behavior, Mobile Drawer Navigation (SOLNOVA style)
+ */
+function initHeaderScrollAndDrawer() {
+  const header = document.getElementById('siteHeader');
+  const toggleBtn = document.getElementById('headerNavToggle');
+  const closeBtn = document.getElementById('drawerCloseBtn');
+  const drawer = document.getElementById('mobileMenuDrawer');
+  const backdrop = document.getElementById('mobileMenuBackdrop');
+  if (!header) return;
+
+  // Xử lý sticky khi cuộn trang
+  let ticking = false;
+  let headerHeight = header.offsetHeight || 110;
+
+  function updateSticky() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    // Khi cuộn qua 70px: chuyển sang dạng sticky compact header (Hình 2)
+    if (scrollY > 70) {
+      if (!header.classList.contains('is-sticky')) {
+        header.classList.add('is-sticky');
+      }
+    } else {
+      if (header.classList.contains('is-sticky')) {
+        header.classList.remove('is-sticky');
+      }
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateSticky);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateSticky();
+
+  // Mở Drawer panel (Hình 3)
+  function openDrawer() {
+    if (drawer) drawer.classList.add('is-open');
+    if (backdrop) backdrop.classList.add('is-open');
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Đóng Drawer panel
+  function closeDrawer() {
+    if (drawer) drawer.classList.remove('is-open');
+    if (backdrop) backdrop.classList.remove('is-open');
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+    document.body.style.overflow = '';
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (drawer && drawer.classList.contains('is-open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      closeDrawer();
+    });
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', closeDrawer);
+  }
+
+  // Đóng khi nhấn phím Esc
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drawer && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
+  });
+
+  // Tự động đóng drawer khi click vào menu item bên trong drawer
+  if (drawer) {
+    const links = drawer.querySelectorAll('a');
+    links.forEach(function(link) {
+      link.addEventListener('click', function() {
+        closeDrawer();
+      });
+    });
+  }
+}
+
+/**
+ * Back To Top Button Controller
+ */
+function initBackToTop() {
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (!backToTopBtn) return;
+
+  function toggleBackToTop() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollY > 280) {
+      backToTopBtn.classList.add('is-visible');
+    } else {
+      backToTopBtn.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+  toggleBackToTop();
+
+  backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 }

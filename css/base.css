@@ -2,7 +2,9 @@
    Base & Reset Variables
    ========================================================================== */
 :root {
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-sans: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Plus Jakarta Sans', var(--font-family-sans);
+  --font-family: var(--font-family-sans);
   --color-primary: #0B3C8C;
   --color-primary-dark: #08285F;
   --color-primary-light: #1D5BBF;
@@ -15,11 +17,11 @@
   --color-slate-200: #E2E8F0;
   --color-slate-300: #CBD5E1;
   --color-slate-400: #94A3B8;
-  --color-slate-500: #64748B;
-  --color-slate-600: #475569;
-  --color-slate-700: #334155;
-  --color-slate-800: #1E293B;
-  --color-slate-900: #0F172A;
+  --color-slate-500: #475569; /* upgraded from #64748B for WCAG AA compliance */
+  --color-slate-600: #334155;
+  --color-slate-700: #1E293B;
+  --color-slate-800: #0F172A;
+  --color-slate-900: #020617;
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --border-radius-sm: 6px;
@@ -41,6 +43,24 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-company-name, .hero-heading {
+  font-family: var(--font-family-heading);
+  letter-spacing: -0.015em;
+}
+
+.section-heading,
+.display-6,
+.h2 {
+  font-family: var(--font-family-heading);
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+/* WCAG AA contrast improvement for secondary text */
+.text-muted {
+  color: #475569 !important; /* High contrast >= 5.4:1 on light/slate backgrounds */
 }
 
 a {

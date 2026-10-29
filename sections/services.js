@@ -1,3 +1,7 @@
+(function() {
+  var el = document.getElementById('section-services');
+  if (el) {
+    el.outerHTML = `
 <!-- =========================================================================
      4. SECTION DỊCH VỤ NỔI BẬT (SERVICES)
      ========================================================================= -->
@@ -5,16 +9,15 @@
   <div class="custom-container">
     <!-- Section Title Header -->
     <div class="text-center mx-auto mb-5" style="max-width: 760px;">
-      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-light border border-secondary-subtle small fw-bold text-brand-red text-uppercase mb-2 shadow-sm" style="font-size: 0.75rem;">
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-light border border-secondary-subtle small fw-bold text-brand-red text-uppercase mb-2 shadow-sm" style="font-size: 0.8125rem;">
         <i class="fa-solid fa-handshake"></i> GIẢI PHÁP ĐỒNG HÀNH CÙNG NHÀ THẦU M&E
       </div>
-      <h2 class="display-6 fw-bold text-primary-blue mb-2">
+      <h2 class="display-6 section-heading text-primary-blue mb-2" style="font-weight: 800; letter-spacing: -0.02em;">
         3 Giải Pháp Cốt Lõi Tối Ưu Cho Dự Án
       </h2>
       <div style="width: 70px; height: 4px; background-color: var(--color-secondary); margin: 0.5rem auto 1rem; border-radius: 999px;"></div>
       <p class="text-muted fs-6">
         <em>"Linh hoạt về tiến độ – Tối ưu về chi phí – Chuẩn mực về chất lượng"</em><br>
-        Cơ Điện Bình An chia sẻ gánh nặng áp lực tiến độ và bài toán tài chính cùng Quý chủ đầu tư & Nhà thầu.
       </p>
     </div>
 
@@ -29,7 +32,7 @@
 
           <!-- Badge góc trên -->
           <div class="position-absolute top-0 start-0 m-3 z-2">
-            <span class="badge bg-warning text-dark text-uppercase fw-bold px-2 py-1 shadow-sm" style="font-size: 0.7rem;">
+            <span class="badge bg-warning text-dark text-uppercase fw-bold px-3 py-1 shadow-sm" style="font-size: 0.8rem;">
               <i class="fa-solid fa-bolt me-1"></i> Miễn phí 100%
             </span>
           </div>
@@ -37,7 +40,7 @@
           <div class="position-relative z-1 text-start mt-auto">
             <div class="d-flex align-items-center justify-content-between mb-2">
               <div class="service-num-badge">01</div>
-              <span class="badge rounded-pill bg-white text-dark small fw-semibold px-2 py-1" style="font-size: 0.7rem;">
+              <span class="badge rounded-pill bg-white text-dark small fw-semibold px-2 py-1" style="font-size: 0.8rem;">
                 <i class="fa-regular fa-clock text-danger me-1"></i> Hỗ trợ 24H
               </span>
             </div>
@@ -64,7 +67,7 @@
 
           <!-- Badge góc trên -->
           <div class="position-absolute top-0 end-0 m-3 z-2">
-            <span class="badge bg-danger text-uppercase fw-bold px-3 py-1 shadow-sm" style="font-size: 0.72rem; background-color: var(--color-secondary) !important;">
+            <span class="badge bg-danger text-uppercase fw-bold px-3 py-1 shadow-sm" style="font-size: 0.8rem; background-color: var(--color-secondary) !important;">
               <i class="fa-solid fa-star me-1"></i> Chiết khấu tối đa
             </span>
           </div>
@@ -72,7 +75,7 @@
           <div class="position-relative z-1 text-start mt-auto">
             <div class="d-flex align-items-center justify-content-between mb-2">
               <div class="service-num-badge">02</div>
-              <span class="badge rounded-pill bg-warning text-dark small fw-bold px-2 py-1" style="font-size: 0.7rem;">
+              <span class="badge rounded-pill bg-warning text-dark small fw-bold px-2 py-1" style="font-size: 0.8rem;">
                 Đầy đủ CO/CQ
               </span>
             </div>
@@ -99,7 +102,7 @@
 
           <!-- Badge góc trên -->
           <div class="position-absolute top-0 start-0 m-3 z-2">
-            <span class="badge bg-success text-uppercase fw-bold px-2 py-1 shadow-sm" style="font-size: 0.7rem;">
+            <span class="badge bg-success text-uppercase fw-bold px-3 py-1 shadow-sm" style="font-size: 0.8rem;">
               <i class="fa-solid fa-recycle me-1"></i> Đặc quyền duy nhất
             </span>
           </div>
@@ -107,7 +110,7 @@
           <div class="position-relative z-1 text-start mt-auto">
             <div class="d-flex align-items-center justify-content-between mb-2">
               <div class="service-num-badge">03</div>
-              <span class="badge rounded-pill bg-white text-dark small fw-semibold px-2 py-1" style="font-size: 0.7rem;">
+              <span class="badge rounded-pill bg-white text-dark small fw-semibold px-2 py-1" style="font-size: 0.8rem;">
                 Tối ưu dòng vốn
               </span>
             </div>
@@ -127,3 +130,7 @@
     </div>
   </div>
 </section>
+
+`;
+  }
+})();

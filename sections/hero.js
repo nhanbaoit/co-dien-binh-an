@@ -1,3 +1,7 @@
+(function() {
+  var el = document.getElementById('section-hero');
+  if (el) {
+    el.outerHTML = `
 <!-- =========================================================================
      2. HERO SLIDER SECTION (3 Sliders: Bốc Tách CAD, Giao Hàng & Đồng Hành)
      ========================================================================= -->
@@ -124,3 +128,7 @@
     <i class="fa-solid fa-comments fs-5"></i>
   </button>
 </section>
+
+`;
+  }
+})();

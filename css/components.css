@@ -1,43 +1,59 @@
 /* ==========================================================================
-   Header Component Styles
+   Header Component Styles (SOLNOVA Style: Standstill, Sticky Compact, Drawer)
    ========================================================================== */
 .site-header {
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid var(--color-slate-200);
   position: relative;
-  z-index: 100;
+  z-index: 1030;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Top bar search */
+/* Top bar search (Pill shape with icon on right - Hình 1 & Hình 2) */
 .search-wrapper {
   position: relative;
-  max-width: 340px;
-}
-
-.search-wrapper i {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--color-slate-400);
+  max-width: 320px;
+  width: 100%;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  padding: 0.5rem 2.6rem 0.5rem 1.25rem;
   font-size: 0.875rem;
   background-color: var(--color-slate-100);
   border: 1px solid var(--color-slate-300);
   border-radius: 9999px;
-  color: var(--color-slate-700);
+  color: var(--color-slate-800);
   outline: none;
-  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .search-input:focus {
   border-color: var(--color-primary);
   background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(11, 60, 140, 0.12);
+}
+
+.search-submit-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--color-slate-700);
+  font-size: 0.95rem;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.search-submit-btn:hover {
+  color: var(--color-primary);
 }
 
 /* Brand Logo */
@@ -46,7 +62,7 @@
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), height var(--transition-fast);
 }
 
 .brand-logo-img:hover {
@@ -58,23 +74,6 @@
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
-}
-
-.brand-logo-badge {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  box-shadow: 0 2px 4px rgba(179, 20, 27, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  flex-shrink: 0;
 }
 
 .brand-company-sub {
@@ -108,7 +107,7 @@
 }
 
 .hotline-label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-slate-500);
   text-transform: uppercase;
@@ -125,10 +124,35 @@
   color: var(--color-secondary);
 }
 
-/* Primary Navbar */
+/* Round Blue Hamburger Button (Hình 2 & Hình 3) */
+.btn-header-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  display: none; /* Ẩn trên desktop đứng im */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(11, 60, 140, 0.25);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  flex-shrink: 0;
+  outline: none;
+}
+
+.btn-header-toggle:hover {
+  background-color: var(--color-primary-dark);
+  transform: scale(1.06);
+}
+
+/* Primary Navbar (Hình 1: Solid Brand Blue trên desktop) */
 .main-navbar {
   background-color: var(--color-primary);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
 .main-nav-list {
@@ -157,7 +181,7 @@
 }
 
 .main-nav-item.active .main-nav-link {
-  color: #fff;
+  color: #ff9800 !important; /* Màu cam nổi bật giống SOLNOVA Hình 1 */
 }
 
 .main-nav-item.active::after {
@@ -167,7 +191,173 @@
   left: 0;
   right: 0;
   height: 3.5px;
+  background-color: #ff9800; /* Gạch chân màu cam giống SOLNOVA Hình 1 */
+  border-radius: 3px 3px 0 0;
+}
+
+/* ==========================================================================
+   HÌNH 2: TRẠNG THÁI STICKY COMPACT HEADER (KHI CUỘN QUA CÁC SECTION)
+   ========================================================================== */
+.site-header.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: #fff;
+  border-bottom: 1px solid var(--color-slate-200);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: headerSlideDown 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes headerSlideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.site-header.is-sticky .site-header-top {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.site-header.is-sticky .brand-logo-img {
+  height: 42px;
+}
+
+/* Hình 2: Ẩn thanh navbar xanh dài khi cuộn */
+.site-header.is-sticky .main-navbar {
+  display: none !important;
+}
+
+/* Hình 2: Ẩn hotline desktop khi cuộn */
+.site-header.is-sticky .header-hotline-wrap {
+  display: none !important;
+}
+
+/* Hình 2: Hiện nút Hamburger tròn xanh ở góc phải */
+.site-header.is-sticky .btn-header-toggle {
+  display: inline-flex !important;
+}
+
+/* ==========================================================================
+   HÌNH 3: FLYOUT / DRAWER MENU (KHI BẤM NÚT TRÒN HOẶC TRÊN MOBILE)
+   ========================================================================== */
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 25, 47, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.mobile-menu-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  width: calc(100% - 28px);
+  max-width: 380px;
+  max-height: calc(100vh - 28px);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-16px) scale(0.96);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+}
+
+.mobile-menu-drawer.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.drawer-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-slate-100);
+}
+
+/* Nút đóng tròn xanh [ X ] (Hình 3) */
+.btn-drawer-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(11, 60, 140, 0.25);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-drawer-close:hover {
   background-color: var(--color-secondary);
+  transform: scale(1.06);
+}
+
+.drawer-body {
+  padding: 1.25rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.drawer-nav-item {
+  border-bottom: 1px solid var(--color-slate-100);
+  padding: 0.4rem 0;
+}
+
+.drawer-nav-item:last-child {
+  border-bottom: none;
+}
+
+.drawer-nav-link {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-slate-800);
+  padding: 0.5rem 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.drawer-nav-link:hover {
+  color: var(--color-secondary);
+  transform: translateX(4px);
+}
+
+.drawer-nav-item.active .drawer-nav-link {
+  color: #ff9800 !important; /* Màu cam nổi bật giống SOLNOVA Hình 3 */
 }
 
 /* ==========================================================================
@@ -337,38 +527,122 @@
   color: #fff;
   box-shadow: var(--shadow-lg);
   transition: transform var(--transition-fast), filter var(--transition-fast);
+  text-decoration: none;
 }
 
 .float-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.18) !important;
   color: #fff;
 }
 
+/* 3 Nút Liên Hệ Pulse Liên Tục Cùng Lúc (Đồng bộ nhịp điệu 1.8s) */
 .float-fb {
   background-color: #1877F2;
+  animation: pulse-fb 1.8s infinite ease-in-out;
 }
 
 .float-zalo {
-  background-color: #0088FF;
-  font-weight: 700;
-  font-size: 0.78rem;
+  background-color: #005bb5; /* WCAG AA accessible contrast (>5.5:1 on white) */
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  animation: pulse-zalo 1.8s infinite ease-in-out;
 }
 
 .float-phone {
   background-color: var(--color-secondary);
-  animation: pulse-ring 2s infinite ease-in-out;
+  animation: pulse-phone 1.8s infinite ease-in-out;
 }
 
-@keyframes pulse-ring {
+@keyframes pulse-fb {
   0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(24, 119, 242, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(24, 119, 242, 0);
+  }
+}
+
+@keyframes pulse-zalo {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 91, 181, 0.7);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(0, 91, 181, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 91, 181, 0);
+  }
+}
+
+@keyframes pulse-phone {
+  0% {
+    transform: scale(1);
     box-shadow: 0 0 0 0 rgba(179, 20, 27, 0.7);
+  }
+  50% {
+    transform: scale(1.08);
   }
   70% {
     box-shadow: 0 0 0 14px rgba(179, 20, 27, 0);
   }
   100% {
+    transform: scale(1);
     box-shadow: 0 0 0 0 rgba(179, 20, 27, 0);
   }
+}
+
+/* ==========================================================================
+   Back To Top Floating Button (Nút quay lại đầu trang)
+   ========================================================================== */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(11, 60, 140, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background-color var(--transition-fast), visibility 0.28s;
+  outline: none;
+}
+
+.back-to-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(179, 20, 27, 0.4);
 }
 
 .floating-support-btn {
@@ -658,19 +932,52 @@
   box-shadow: var(--shadow-md);
 }
 
-.news-badge {
+.news-cover-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-top-left-radius: var(--border-radius-md);
+  border-top-right-radius: var(--border-radius-md);
+  background-color: var(--color-slate-100);
+}
+
+.news-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.news-card:hover .news-cover-img {
+  transform: scale(1.05);
+}
+
+.news-navy-overlay {
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  padding: 0.25rem 0.65rem;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 25, 47, 0.72) 0%, rgba(11, 60, 140, 0.28) 45%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+
+.news-badge,
+.news-pill-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 2;
+  padding: 0.35rem 0.85rem;
   border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.98);
   color: var(--color-primary);
-  font-size: 0.65rem;
-  font-weight: 800;
+  font-size: 0.8125rem; /* 13px - exceeds WCAG 11px minimum requirement */
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  line-height: 1.2;
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 /* ==========================================================================
@@ -682,39 +989,97 @@
   border-top: 1px solid var(--color-slate-200);
 }
 
+/* ==========================================================================
+   Brand / Partner Cards (Step 3: 1200px container, 12px radius, red top border on hover)
+   ========================================================================== */
+.brand-container-1200 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.brand-logo-card,
 .brand-text-card {
-  background-color: #fff;
-  border-radius: var(--border-radius-lg);
+  background-color: #ffffff;
+  border-radius: 12px;
   border: 1px solid var(--color-slate-200);
-  box-shadow: 0 4px 12px rgba(11, 60, 140, 0.04);
-  padding: 1.5rem 1.25rem;
+  border-top: 3px solid transparent;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); /* soft shadow */
+  padding: 1.5rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-top-color var(--transition-fast);
+  cursor: pointer;
+  min-height: 124px;
 }
 
+/* Hover: Lifts card slightly + Red (#B3141B) top border + Elevated soft shadow */
+.brand-logo-card:hover,
 .brand-text-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(11, 60, 140, 0.08);
-  border-color: rgba(11, 60, 140, 0.35);
+  transform: translateY(-5px);
+  border-top: 3px solid #B3141B !important;
+  border-color: rgba(11, 60, 140, 0.22);
+  box-shadow: 0 12px 28px rgba(11, 60, 140, 0.12);
 }
 
-.brand-text-name {
-  color: var(--color-primary);
-  font-size: 1.15rem;
+.brand-logo-box {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+/* Logo: centered, max-height 48px, max-width 75%, object-fit: contain, grayscale + opacity 0.7 */
+.brand-logo-img-item {
+  max-height: 48px;
+  max-width: 75%;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover: Bừng sáng đầy đủ màu sắc nguyên bản + zoom nhẹ mượt mà */
+.brand-logo-card:hover .brand-logo-img-item {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Text-only fallback card styling (for brands without clean official >=400px files) */
+.brand-fallback-name {
+  color: #0B3C8C;
+  font-size: 1.25rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.brand-text-card:hover .brand-fallback-name {
+  color: #B3141B;
 }
 
 .brand-text-caption {
-  color: var(--color-slate-500);
-  font-size: 0.85rem;
-  margin-top: 0.4rem;
+  color: #64748b;
+  font-size: 0.8125rem;
+  margin-top: 0.2rem;
   font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.brand-logo-card:hover .brand-text-caption,
+.brand-text-card:hover .brand-text-caption {
+  color: #1e293b;
+  font-weight: 600;
 }
 
 
@@ -726,13 +1091,19 @@
   background-color: var(--color-primary-dark);
   color: #fff;
   padding-top: 4rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright-bar {
+  padding-top: 0.85rem;
+  padding-bottom: 0.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-nav-link {
   color: var(--color-slate-300);
-  transition: color var(--transition-fast), padding-left var(--transition-fast);
+  transition: color var(--transition-fast), transform var(--transition-fast);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -740,7 +1111,7 @@
 
 .footer-nav-link:hover {
   color: #fff;
-  padding-left: 4px;
+  transform: translateX(4px); /* 60fps GPU-accelerated transform, zero layout reflow */
 }
 
 .footer-form-input {

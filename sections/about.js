@@ -1,3 +1,7 @@
+(function() {
+  var el = document.getElementById('section-about');
+  if (el) {
+    el.outerHTML = `
 <!-- =========================================================================
      3. SECTION GIỚI THIỆU (ABOUT US)
      ========================================================================= -->
@@ -59,7 +63,7 @@
               </div>
               <div>
                 <h4 class="text-uppercase fw-bold text-white small mb-1">ĐỘI NGŨ KỸ SƯ GIỎI</h4>
-                <p class="text-light opacity-75 mb-0" style="font-size: 0.78rem;">Kỹ sư dày dặn kinh nghiệm trong lĩnh vực M&E, hỗ trợ nhanh chóng và chính xác.</p>
+                <p class="text-light opacity-85 mb-0" style="font-size: 0.85rem;">Kỹ sư dày dặn kinh nghiệm trong lĩnh vực M&E, hỗ trợ nhanh chóng và chính xác.</p>
               </div>
             </div>
           </div>
@@ -72,7 +76,7 @@
               </div>
               <div>
                 <h4 class="text-uppercase fw-bold text-white small mb-1">CAM KẾT CHẤT LƯỢNG</h4>
-                <p class="text-light opacity-75 mb-0" style="font-size: 0.78rem;">Linh hoạt về tiến độ, tối ưu về chi phí, chuẩn mực về chất lượng.</p>
+                <p class="text-light opacity-85 mb-0" style="font-size: 0.85rem;">Linh hoạt về tiến độ, tối ưu về chi phí, chuẩn mực về chất lượng.</p>
               </div>
             </div>
           </div>
@@ -89,3 +93,7 @@
     </div>
   </div>
 </section>
+
+`;
+  }
+})();

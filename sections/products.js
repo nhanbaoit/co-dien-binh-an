@@ -1,3 +1,7 @@
+(function() {
+  var el = document.getElementById('section-products');
+  if (el) {
+    el.outerHTML = `
 <!-- =========================================================================
      5. SECTION DANH MỤC SẢN PHẨM (PRODUCTS)
      ========================================================================= -->
@@ -5,10 +9,10 @@
   <div class="custom-container">
     <!-- Section Title Header -->
     <div class="text-center mx-auto mb-4" style="max-width: 650px;">
-      <div class="d-inline-block px-3 py-1 rounded-pill bg-white border border-secondary-subtle small fw-bold text-primary-blue text-uppercase mb-2 shadow-sm" style="font-size: 0.72rem;">
+      <div class="d-inline-block px-3 py-1 rounded-pill bg-white border border-secondary-subtle small fw-bold text-primary-blue text-uppercase mb-2 shadow-sm" style="font-size: 0.8125rem;">
         DANH MỤC SẢN PHẨM
       </div>
-      <h2 class="h3 fw-bold text-primary-blue text-uppercase mb-2">
+      <h2 class="h2 section-heading text-primary-blue text-uppercase mb-2" style="font-weight: 800; letter-spacing: -0.01em;">
         VẬT TƯ CƠ ĐIỆN CHÍNH HÃNG
       </h2>
       <!-- Double Red Accent Underline -->
@@ -16,9 +20,6 @@
         <div style="width: 80px; height: 3px; background-color: var(--color-secondary); border-radius: 99px;"></div>
         <div style="width: 48px; height: 2px; background-color: var(--color-secondary); border-radius: 99px;"></div>
       </div>
-      <p class="text-muted small">
-        Phân phối trực tiếp các thương hiệu hàng đầu, đầy đủ CO/CQ, chiết khấu cạnh tranh, giao hàng tận chân công trình.
-      </p>
     </div>
 
     <!-- Filter Tabs -->
@@ -179,3 +180,7 @@
     </div>
   </div>
 </section>
+
+`;
+  }
+})();
