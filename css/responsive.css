@@ -60,11 +60,13 @@
   }
 
   .brand-company-sub {
-    font-size: 0.65rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
   }
 
   .brand-company-name {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
+    font-weight: 900;
   }
 
   .hero-slide-wrapper {
