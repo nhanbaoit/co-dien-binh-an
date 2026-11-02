@@ -142,3 +142,10 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Responsive Single-line helper */
+@media (min-width: 992px) {
+  .text-nowrap-desktop {
+    white-space: nowrap !important;
+  }
+}
