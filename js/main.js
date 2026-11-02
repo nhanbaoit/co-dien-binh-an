@@ -86,7 +86,7 @@ function initProductFilter() {
 
   const buttons = section.querySelectorAll(".product-tab-btn");
   const products = section.querySelectorAll(".product-item-col");
-  const maxVisibleProducts = 8;
+  const maxVisibleProducts = 12;
 
   function filterProducts(filter) {
     buttons.forEach((button) => {
