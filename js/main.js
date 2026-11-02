@@ -110,6 +110,21 @@ function initProductFilter() {
     );
   });
 
+  // Xử lý các mục chọn từ dropdown 'XEM TẤT CẢ SẢN PHẨM'
+  section.querySelectorAll("[data-filter-select]").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      const filter = item.dataset.filterSelect;
+      filterProducts(filter);
+
+      // Cuộn mượt đến lưới sản phẩm
+      const grid = document.getElementById("productGrid");
+      if (grid) {
+        grid.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
   section
     .querySelector("[data-product-show-all]")
     ?.addEventListener("click", () => {
