@@ -76,6 +76,15 @@
     font-size: 2rem;
   }
 
+  .hero-heading-max720 {
+    max-width: 100%;
+  }
+
+  .hero-heading-nowrap-line {
+    white-space: nowrap;
+    font-size: 0.95em;
+  }
+
   .hero-highlight-promo {
     font-size: 1.05em;
   }
@@ -141,6 +150,10 @@
 
   .hero-heading {
     font-size: 1.65rem;
+  }
+
+  .hero-heading-nowrap-line {
+    white-space: normal;
   }
 
   .hero-highlight-promo {
