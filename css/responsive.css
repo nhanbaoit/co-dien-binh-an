@@ -76,6 +76,10 @@
     font-size: 2rem;
   }
 
+  .hero-highlight-promo {
+    font-size: 1.05em;
+  }
+
   .partner-logo-grid {
     grid-template-columns: repeat(3, 1fr) !important;
     width: 100% !important;
@@ -137,6 +141,11 @@
 
   .hero-heading {
     font-size: 1.65rem;
+  }
+
+  .hero-highlight-promo {
+    font-size: 0.95em;
+    white-space: normal;
   }
 
   .hero-subtitle {
