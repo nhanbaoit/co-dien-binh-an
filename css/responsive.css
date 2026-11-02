@@ -1,31 +1,75 @@
 /* ==========================================================================
-   Responsive Overrides and Mobile Tweaks (SOLNOVA Header & Mobile Drawer)
+   Responsive Overrides and Mobile Tweaks
    ========================================================================== */
-@media (max-width: 991.98px) {
-  /* Header trên tablet/mobile: Sticky ở đỉnh */
-  .site-header {
-    position: sticky;
-    top: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-content {
+    gap: 1rem;
   }
 
-  /* Ẩn navbar ngang dài trên mobile/tablet */
-  .main-navbar {
-    display: none !important;
-  }
-
-  /* Ẩn hotline desktop dài trên mobile/tablet */
-  .header-hotline-wrap {
-    display: none !important;
-  }
-
-  /* Luôn hiện nút Hamburger tròn màu xanh trên mobile/tablet (Hình 2 & 3) */
-  .btn-header-toggle {
-    display: inline-flex !important;
+  .main-nav-list {
+    gap: 1.5rem;
+    font-size: 0.875rem;
   }
 
   .search-wrapper {
-    max-width: 100%;
+    flex-basis: 220px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .header-branding {
+    gap: 1.25rem;
+    grid-template-columns: 92px minmax(0, 1fr);
+  }
+
+  .brand-logo-img {
+    width: 92px;
+    height: 92px;
+  }
+
+  .header-hotline {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0.75rem 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--color-slate-200);
+    gap: 0.625rem;
+  }
+
+  .hotline-icon-box {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hotline-number {
+    font-size: 1.25rem;
+  }
+
+  .navbar-content {
+    flex-wrap: wrap;
+    gap: 0;
+    padding-bottom: 0.875rem;
+  }
+
+  .search-wrapper {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .main-nav-list {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    font-size: 0.875rem;
+    padding: 0.25rem 0 0.5rem;
+  }
+
+  .main-nav-link {
+    min-height: 44px;
+    padding: 0.625rem 0;
   }
 
   .hero-heading {
@@ -39,34 +83,52 @@
 }
 
 @media (max-width: 767.98px) {
-  /* Header trên điện thoại: Logo bên trái, Nút Hamburger tròn xanh bên phải (Hình 3) */
-  .header-search-col {
-    display: none !important; /* Ô tìm kiếm đã có sẵn ngay đầu menu drawer khi bấm nút */
-  }
-
-  .header-logo-col {
-    width: calc(100% - 60px) !important;
-    text-align: left !important;
-  }
-
-  .header-actions-col {
-    width: 60px !important;
-    display: flex;
-    justify-content: flex-end;
+  .header-branding {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .brand-logo-img {
-    height: 40px;
+    width: 83px;
+    height: 83px;
   }
 
-  .brand-company-sub {
-    font-size: 0.58rem;
-    letter-spacing: 0.06em;
+  .brand-identity {
+    width: 100%;
   }
 
-  .brand-company-name {
-    font-size: 1.15rem;
-    font-weight: 900;
+  .header-hotline {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--color-slate-200);
+  }
+
+  .hotline-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hotline-label {
+    font-size: 0.625rem;
+  }
+
+  .main-nav-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.375rem 0.75rem;
+  }
+
+  .main-nav-link {
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+    text-align: center;
+    white-space: normal;
   }
 
   .hero-slide-wrapper {
@@ -88,7 +150,7 @@
   .floating-social-dock {
     right: 0.5rem;
   }
-  
+
   .float-btn {
     width: 38px;
     height: 38px;
@@ -100,13 +162,5 @@
     left: 1rem;
     width: 44px;
     height: 44px;
-  }
-
-  .back-to-top-btn {
-    bottom: 1rem;
-    right: 0.5rem;
-    width: 38px;
-    height: 38px;
-    font-size: 0.85rem;
   }
 }

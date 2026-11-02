@@ -2,50 +2,27 @@
  * Co Dien Binh An - Main Client Scripts
  */
 
-function initAllComponents() {
-  initHeaderScrollAndDrawer();
+document.addEventListener("DOMContentLoaded", function () {
   initHeroSlider();
   initProductFilter();
   initNewsNavigation();
   initNewsletterForm();
   initSmoothScroll();
-  initScrollSpy();
-  initBackToTop();
-}
-
-let initialized = false;
-function safeInit() {
-  if (initialized) return;
-  if (document.querySelector('.hero-slide-item')) {
-    initialized = true;
-    initAllComponents();
-  }
-}
-
-// Support both dynamically loaded sections and standard DOMContentLoaded
-document.addEventListener('sectionsLoaded', function() {
-  initialized = true;
-  initAllComponents();
 });
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', safeInit);
-} else {
-  safeInit();
-}
 
 /**
  * Hero Slider Controller (Auto-play, Dots, Prev/Next)
  */
 function initHeroSlider() {
-  const slides = document.querySelectorAll('.hero-slide-item');
-  const dots = document.querySelectorAll('.hero-dot');
+  const slides = document.querySelectorAll(".hero-slide-item");
+  const dots = document.querySelectorAll(".hero-dot");
 
   if (!slides.length) return;
 
   let currentSlide = 0;
   let autoTimer = null;
-  const slideDuration = 5000; // 5.0 giây chuyển slide êm ái
+  // Slide 1 (Bóc tách khối lượng) hiển thị 7.5s, các slide khác 5s
+  const getSlideDuration = (slideIndex) => (slideIndex === 0 ? 7500 : 5000);
 
   function goToSlide(targetIndex) {
     // Tính toán vòng lặp vô tận: 0 -> 1 -> 2 -> 0 -> 1 -> 2
@@ -54,41 +31,43 @@ function initHeroSlider() {
     // Chuyển đổi class active để kích hoạt CSS Cross-Fade êm ái
     slides.forEach((slide, idx) => {
       if (idx === currentSlide) {
-        slide.classList.add('active');
+        slide.classList.add("active");
       } else {
-        slide.classList.remove('active');
+        slide.classList.remove("active");
       }
     });
 
     // Cập nhật dot phân trang
     dots.forEach((dot, idx) => {
       if (idx === currentSlide) {
-        dot.classList.add('active');
+        dot.classList.add("active");
       } else {
-        dot.classList.remove('active');
+        dot.classList.remove("active");
       }
     });
   }
 
   function nextSlide() {
     goToSlide(currentSlide + 1);
+    startAutoPlay();
   }
 
   function startAutoPlay() {
     stopAutoPlay();
-    autoTimer = setInterval(nextSlide, slideDuration);
+    const duration = getSlideDuration(currentSlide);
+    autoTimer = setTimeout(nextSlide, duration);
   }
 
   function stopAutoPlay() {
     if (autoTimer) {
-      clearInterval(autoTimer);
+      clearTimeout(autoTimer);
       autoTimer = null;
     }
   }
 
   // Sự kiện click Dot chọn slide nhanh
   dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
+    dot.addEventListener("click", () => {
       goToSlide(index);
       startAutoPlay();
     });
@@ -102,310 +81,112 @@ function initHeroSlider() {
  * Filter products based on selected category tab
  */
 function initProductFilter() {
-  const filterBtns = document.querySelectorAll('.product-tab-btn');
-  const productCards = document.querySelectorAll('.product-item-col');
+  const section = document.querySelector("#san-pham");
+  if (!section) return;
 
-  if (!filterBtns.length || !productCards.length) return;
+  const buttons = section.querySelectorAll(".product-tab-btn");
+  const products = section.querySelectorAll(".product-item-col");
+  const maxVisibleProducts = 8;
 
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', function () {
-      filterBtns.forEach((b) => b.classList.remove('active'));
-      this.classList.add('active');
-
-      const filterValue = this.getAttribute('data-filter');
-
-      productCards.forEach((card) => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
-          card.style.display = 'block';
-          card.style.animation = 'fadeIn 0.35s ease';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+  function filterProducts(filter) {
+    buttons.forEach((button) => {
+      const active = button.dataset.filter === filter;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
     });
+
+    let visibleCount = 0;
+    products.forEach((product) => {
+      const matches = filter === "all" || product.dataset.category === filter;
+      const visible = matches && visibleCount < maxVisibleProducts;
+      product.hidden = !visible;
+      if (visible) visibleCount++;
+    });
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () =>
+      filterProducts(button.dataset.filter),
+    );
   });
+
+  section
+    .querySelector("[data-product-show-all]")
+    ?.addEventListener("click", () => {
+      filterProducts("all");
+    });
+
+  filterProducts(
+    section.querySelector(".product-tab-btn.active")?.dataset.filter || "all",
+  );
 }
 
 /**
  * News carousel simple navigation simulation
  */
 function initNewsNavigation() {
-  const prevBtn = document.getElementById('newsPrevBtn');
-  const nextBtn = document.getElementById('newsNextBtn');
-  const newsRow = document.getElementById('newsContainer');
+  const prevBtn = document.getElementById("newsPrevBtn");
+  const nextBtn = document.getElementById("newsNextBtn");
+  const newsRow = document.getElementById("newsContainer");
 
   if (!prevBtn || !nextBtn || !newsRow) return;
 
-  prevBtn.addEventListener('click', () => {
-    newsRow.style.opacity = '0.5';
+  prevBtn.addEventListener("click", () => {
+    newsRow.style.opacity = "0.5";
     setTimeout(() => {
-      newsRow.style.opacity = '1';
+      newsRow.style.opacity = "1";
     }, 200);
   });
 
-  nextBtn.addEventListener('click', () => {
-    newsRow.style.opacity = '0.5';
+  nextBtn.addEventListener("click", () => {
+    newsRow.style.opacity = "0.5";
     setTimeout(() => {
-      newsRow.style.opacity = '1';
+      newsRow.style.opacity = "1";
     }, 200);
   });
 }
 
 /**
- * Handle subscription form submission with Bootstrap Success Modal
+ * Handle subscription form submission
  */
 function initNewsletterForm() {
-  const form = document.getElementById('newsletterForm');
+  const form = document.getElementById("newsletterForm");
   if (!form) return;
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const nameInput = form.querySelector('input[type="text"]');
-    const name = nameInput ? nameInput.value.trim() : '';
+    const name = form.querySelector('input[type="text"]').value;
+    const phone = form.querySelector('input[type="tel"]').value;
+    const email = form.querySelector('input[type="email"]').value;
 
-    // Cập nhật tên khách hàng vào modal nếu có
-    const nameDisplay = document.getElementById('successCustomerName');
-    if (nameDisplay) {
-      nameDisplay.textContent = name ? ` ${name}` : '';
+    if (!name || !phone) {
+      alert("Vui lòng nhập đầy đủ Họ tên và Số điện thoại!");
+      return;
     }
 
-    // Hiển thị Bootstrap Modal Popup thông báo thành công
-    const modalEl = document.getElementById('newsletterSuccessModal');
-    if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
-      const successModal = bootstrap.Modal.getOrCreateInstance(modalEl);
-      successModal.show();
-    } else {
-      alert(`Đăng ký thành công! Cảm ơn Quý khách ${name} đã quan tâm.`);
-    }
-
+    alert(
+      `Cảm ơn Quý khách ${name}! Cơ Điện Bình An đã tiếp nhận thông tin và sẽ liên hệ sớm nhất.`,
+    );
     form.reset();
   });
 }
 
 /**
- * Smooth scrolling for anchor links with sticky header offset
+ * Smooth scrolling for anchor links
  */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId === '') return;
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId === "#" || targetId === "") return;
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        const header = document.getElementById('siteHeader');
-        const headerHeight = header ? (header.offsetHeight || 110) : 110;
-        const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - (headerHeight - 15);
-        window.scrollTo({
-          top: Math.max(0, targetPos),
-          behavior: 'smooth'
+        targetEl.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
         });
       }
-    });
-  });
-}
-
-/**
- * Scrollspy: Tự động đánh dấu màu đỏ mục menu tương ứng khi lướt qua các section
- */
-function initScrollSpy() {
-  const sectionIds = ['trang-chu', 'gioi-thieu', 'dich-vu', 'san-pham', 'tin-tuc', 'lien-he'];
-  const sections = sectionIds.map(id => ({
-    id: id,
-    el: document.getElementById(id)
-  })).filter(s => s.el !== null);
-
-  const mainItems = document.querySelectorAll('.main-nav-item');
-  const drawerItems = document.querySelectorAll('.drawer-nav-item');
-
-  function updateActive(activeId) {
-    mainItems.forEach(item => {
-      const a = item.querySelector('a');
-      if (!a) return;
-      const href = a.getAttribute('href');
-      if (href === '#' + activeId || (activeId === 'trang-chu' && (href === '#' || href === '#trang-chu'))) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-
-    drawerItems.forEach(item => {
-      const a = item.querySelector('a');
-      if (!a) return;
-      const href = a.getAttribute('href');
-      if (href === '#' + activeId || (activeId === 'trang-chu' && (href === '#' || href === '#trang-chu'))) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-  }
-
-  let ticking = false;
-  function checkScrollPosition() {
-    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-
-    // Khi cuộn xuống sát đáy trang -> Đánh dấu Liên hệ
-    if (scrollPos + windowHeight >= docHeight - 80) {
-      updateActive('lien-he');
-      ticking = false;
-      return;
-    }
-
-    const header = document.getElementById('siteHeader');
-    const headerOffset = header ? (header.offsetHeight + 40) : 150;
-
-    let current = sections[0]?.id || 'trang-chu';
-    for (let i = 0; i < sections.length; i++) {
-      const sec = sections[i];
-      const top = sec.el.getBoundingClientRect().top + scrollPos - headerOffset;
-      if (scrollPos >= top) {
-        current = sec.id;
-      }
-    }
-
-    updateActive(current);
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(checkScrollPosition);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  // Kiểm tra vị trí ngay khi trang load
-  checkScrollPosition();
-}
-
-/**
- * Header Scroll & Sticky Behavior, Mobile Drawer Navigation (SOLNOVA style)
- */
-function initHeaderScrollAndDrawer() {
-  const header = document.getElementById('siteHeader');
-  const toggleBtn = document.getElementById('headerNavToggle');
-  const closeBtn = document.getElementById('drawerCloseBtn');
-  const drawer = document.getElementById('mobileMenuDrawer');
-  const backdrop = document.getElementById('mobileMenuBackdrop');
-  if (!header) return;
-
-  // Xử lý sticky khi cuộn trang
-  let ticking = false;
-  let headerHeight = header.offsetHeight || 110;
-
-  function updateSticky() {
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollY > 20) {
-      if (!header.classList.contains('is-scrolled')) {
-        header.classList.add('is-scrolled');
-      }
-    } else {
-      if (header.classList.contains('is-scrolled')) {
-        header.classList.remove('is-scrolled');
-      }
-    }
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateSticky);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  updateSticky();
-
-  // Mở Drawer panel (Hình 3)
-  function openDrawer() {
-    if (drawer) drawer.classList.add('is-open');
-    if (backdrop) backdrop.classList.add('is-open');
-    if (toggleBtn) {
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      toggleBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    }
-    document.body.style.overflow = 'hidden';
-  }
-
-  // Đóng Drawer panel
-  function closeDrawer() {
-    if (drawer) drawer.classList.remove('is-open');
-    if (backdrop) backdrop.classList.remove('is-open');
-    if (toggleBtn) {
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }
-    document.body.style.overflow = '';
-  }
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      if (drawer && drawer.classList.contains('is-open')) {
-        closeDrawer();
-      } else {
-        openDrawer();
-      }
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      closeDrawer();
-    });
-  }
-
-  if (backdrop) {
-    backdrop.addEventListener('click', closeDrawer);
-  }
-
-  // Đóng khi nhấn phím Esc
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && drawer && drawer.classList.contains('is-open')) {
-      closeDrawer();
-    }
-  });
-
-  // Tự động đóng drawer khi click vào menu item bên trong drawer
-  if (drawer) {
-    const links = drawer.querySelectorAll('a');
-    links.forEach(function(link) {
-      link.addEventListener('click', function() {
-        closeDrawer();
-      });
-    });
-  }
-}
-
-/**
- * Back To Top Button Controller
- */
-function initBackToTop() {
-  const backToTopBtn = document.getElementById('backToTopBtn');
-  if (!backToTopBtn) return;
-
-  function toggleBackToTop() {
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollY > 280) {
-      backToTopBtn.classList.add('is-visible');
-    } else {
-      backToTopBtn.classList.remove('is-visible');
-    }
-  }
-
-  window.addEventListener('scroll', toggleBackToTop, { passive: true });
-  toggleBackToTop();
-
-  backToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
     });
   });
 }
